@@ -53,8 +53,8 @@ Source of truth:
 
 | ID | Requirement | Status | Evidence | V1 Action |
 |---|---|---:|---|---|
-| V1-CONFIG-001 | Default `codecheck.json` schema fields. | Partial | `default-codecheck.json` lacks several design fields such as report formats and language standards. | Reconcile config model with design. |
-| V1-CONFIG-002 | C11 and C++14 standards. | Partial | `CompileContextBuilder` hardcodes `c11` and `c++14`. | Move standards into config and GUI. |
+| V1-CONFIG-001 | Default `codecheck.json` schema fields. | Partial | `default-codecheck.json` now declares language standards and V1 report formats. More Qt/settings fields remain for later GUI/release work. | Continue Qt/settings reconciliation in GUI phase. |
+| V1-CONFIG-002 | C11 and C++14 standards. | Done | `BuildConfig` exposes `cStandard` and `cppStandard`; `CompileContextBuilder` uses config values; tests cover custom standards. | Surface these fields in GUI config page. |
 | V1-CONFIG-003 | Include paths and macros. | Partial | Config and parsers support includes/defines. | Add CLI and GUI tests. |
 | V1-CONFIG-004 | `.vcxproj` parsing. | Partial | Parser exists and unit tests exist. | Verify with realistic Visual Studio sample. |
 | V1-CONFIG-005 | `.pro` parsing. | Partial | Parser exists and unit tests exist. | Expand `qt-demo` and verify. |
@@ -89,11 +89,11 @@ Source of truth:
 
 | ID | Requirement | Status | Evidence | V1 Action |
 |---|---|---:|---|---|
-| V1-RPT-001 | `report.json`. | Partial | Writer exists; schema lacks metrics/disabled rules fields from design. | Reconcile report model with design. |
+| V1-RPT-001 | `report.json`. | Partial | Writer exists; report schema now includes `metrics`, `disabledRules`, `baseline`, `suppression`, `outputs`, and failed files. Metrics aggregation and disabled-rule workflows still need implementation. | Populate metrics and disabled rules from scan/rule-management workflows. |
 | V1-RPT-002 | `report.html`. | Partial | Basic HTML exists, not full design presentation. | Expand summary, failed files, suppressed issues, disabled rules, metrics. |
 | V1-RPT-003 | `report.sarif`. | Partial | Basic SARIF exists. | Validate with SARIF schema where possible. |
 | V1-RPT-004 | `report.csv`. | Done | CSV writer exists; V1 accepts CSV instead of XLSX. | Keep tests. |
-| V1-RPT-005 | `report.xlsx`. | Deferred | User confirmed XLSX not required in V1. | Remove/disable GUI/export claims for V1. |
+| V1-RPT-005 | `report.xlsx`. | Deferred | User confirmed XLSX not required in V1; config validation rejects `xlsx` in `report.formats`. | Keep GUI/export XLSX absent or disabled for V1. |
 | V1-RPT-006 | Failed files shown in reports. | Partial | Report and HTML include failed files. | Add E2E failed-file test. |
 | V1-RPT-007 | Complexity metrics and top lists. | Not Started | No metrics model found in report. | Add lizard metrics aggregation or mark scope explicitly. |
 | V1-RPT-008 | Quality score 100-point system. | Done | `QualityScoreService` exists and tests cover scoring. | Verify Chinese labels after encoding cleanup. |

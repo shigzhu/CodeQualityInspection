@@ -150,13 +150,14 @@ public sealed class ScanOrchestrator
         };
 
         await _scanStatusService.WriteAsync(config, Directory.GetCurrentDirectory(), new ScanStatus { Status = "Running", Phase = "ReportGenerating", TotalFiles = files.Count, TotalIssues = issues.Count, FailedFiles = failedFiles.Count, Message = "Generating reports." }, cancellationToken);
-        var generatedReports = await _reportGenerationService.GenerateAsync(report, outputDirectory, files.Count, finishedAt, cancellationToken);
+        var generatedReports = await _reportGenerationService.GenerateAsync(report, config.Report, outputDirectory, files.Count, finishedAt, cancellationToken);
         await _scanStatusService.WriteAsync(config, Directory.GetCurrentDirectory(), new ScanStatus { Status = report.Scan.Status, Phase = "Completed", TotalFiles = files.Count, TotalIssues = issues.Count, FailedFiles = failedFiles.Count, ReportPath = generatedReports.JsonPath, Message = "Scan completed." }, cancellationToken);
 
-        _progressReporter.Write("report-generated", new { format = "json", path = generatedReports.JsonPath });
-        _progressReporter.Write("report-generated", new { format = "html", path = generatedReports.HtmlPath });
-        _progressReporter.Write("report-generated", new { format = "sarif", path = generatedReports.SarifPath });
-        _progressReporter.Write("report-generated", new { format = "csv", path = generatedReports.CsvPath });
+        foreach (var output in report.Outputs.Where(output => !string.Equals(output.Key, "log", StringComparison.OrdinalIgnoreCase)))
+        {
+            _progressReporter.Write("report-generated", new { format = output.Key, path = output.Value });
+        }
+
         _progressReporter.Write("scan-completed", new { status = report.Scan.Status, totalIssues = issues.Count, report = generatedReports.JsonPath });
         return 0;
     }
@@ -185,7 +186,7 @@ public sealed class ScanOrchestrator
             Logs = [new LogEntry { Level = "Warning", Time = finishedAt, Message = "Scan cancelled by control file." }]
         };
 
-        var generatedReports = await _reportGenerationService.GenerateAsync(report, outputDirectory, files.Count, finishedAt, cancellationToken);
+        var generatedReports = await _reportGenerationService.GenerateAsync(report, config.Report, outputDirectory, files.Count, finishedAt, cancellationToken);
         await _scanStatusService.WriteAsync(config, Directory.GetCurrentDirectory(), new ScanStatus { Status = "Cancelled", Phase = "Cancelled", TotalFiles = files.Count, TotalIssues = issues.Count, FailedFiles = failedFiles.Count, ReportPath = generatedReports.JsonPath, Message = "Scan cancelled by control file." }, cancellationToken);
         _progressReporter.Write("scan-completed", new { status = "Cancelled", totalIssues = issues.Count, report = generatedReports.JsonPath });
         return 6;

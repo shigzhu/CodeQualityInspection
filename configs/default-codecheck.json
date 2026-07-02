@@ -22,7 +22,9 @@
     "defines": [],
     "projectFiles": [],
     "requireCompileContext": true,
-    "allowDegradedScan": false
+    "allowDegradedScan": false,
+    "cStandard": "c11",
+    "cppStandard": "c++14"
   },
   "scan": {
     "excludeDirectories": [
@@ -77,7 +79,8 @@
     "path": ""
   },
   "report": {
-    "outputDirectory": "reports"
+    "outputDirectory": "reports",
+    "formats": ["json", "html", "sarif", "csv"]
   },
   "runtime": {
     "logDirectory": "logs",

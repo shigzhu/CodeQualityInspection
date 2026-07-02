@@ -99,6 +99,12 @@ public sealed class BuildConfig
 
     [JsonPropertyName("allowDegradedScan")]
     public bool AllowDegradedScan { get; set; }
+
+    [JsonPropertyName("cStandard")]
+    public string CStandard { get; set; } = "c11";
+
+    [JsonPropertyName("cppStandard")]
+    public string CppStandard { get; set; } = "c++14";
 }
 
 public sealed class ScanConfig
@@ -171,6 +177,9 @@ public sealed class ReportConfig
 {
     [JsonPropertyName("outputDirectory")]
     public string OutputDirectory { get; set; } = "reports";
+
+    [JsonPropertyName("formats")]
+    public List<string> Formats { get; set; } = ["json", "html", "sarif", "csv"];
 }
 
 public sealed class RuntimeConfig

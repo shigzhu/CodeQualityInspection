@@ -14,7 +14,9 @@ public sealed class CompileContextBuilderTests
             {
                 IncludeDirectories = ["samples/cpp-demo/include"],
                 Defines = ["UNIT_TEST"],
-                ProjectFiles = ["samples/cpp-demo/cpp-demo.vcxproj"]
+                ProjectFiles = ["samples/cpp-demo/cpp-demo.vcxproj"],
+                CStandard = "c17",
+                CppStandard = "c++20"
             }
         };
 
@@ -24,6 +26,8 @@ public sealed class CompileContextBuilderTests
         Assert.Contains(context.IncludeDirectories, path => path.EndsWith(Path.Combine("samples", "cpp-demo", "include")));
         Assert.Contains("UNIT_TEST", context.Defines);
         Assert.Contains(context.ProjectFiles, path => path.EndsWith(Path.Combine("samples", "cpp-demo", "cpp-demo.vcxproj")));
+        Assert.Equal("c17", context.CStandard);
+        Assert.Equal("c++20", context.CppStandard);
     }
 
     [Fact]

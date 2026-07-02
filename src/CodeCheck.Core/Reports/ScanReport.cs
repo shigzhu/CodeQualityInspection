@@ -14,8 +14,10 @@ public sealed class ScanReport
     public ScanInfo Scan { get; set; } = new();
     public SummaryInfo Summary { get; set; } = new();
     public QualityScoreInfo QualityScore { get; set; } = new();
+    public ReportMetrics Metrics { get; set; } = new();
     public List<Issue> Issues { get; set; } = [];
     public List<FailedFile> FailedFiles { get; set; } = [];
+    public List<DisabledRuleInfo> DisabledRules { get; set; } = [];
     public BaselineInfo Baseline { get; set; } = new();
     public SuppressionInfo Suppression { get; set; } = new();
     public List<SuppressedIssue> SuppressedIssues { get; set; } = [];
@@ -69,6 +71,39 @@ public sealed class FailedFile
     public string Stage { get; set; } = string.Empty;
     public string ErrorCode { get; set; } = string.Empty;
     public string Message { get; set; } = string.Empty;
+}
+
+public sealed class ReportMetrics
+{
+    public Dictionary<string, int> FilesByLanguage { get; set; } = [];
+    public Dictionary<string, int> LinesOfCodeByLanguage { get; set; } = [];
+    public List<ComplexityMetric> TopComplexityFunctions { get; set; } = [];
+    public List<FunctionLengthMetric> TopLongFunctions { get; set; } = [];
+}
+
+public sealed class ComplexityMetric
+{
+    public string File { get; set; } = string.Empty;
+    public string Function { get; set; } = string.Empty;
+    public int Line { get; set; }
+    public int Complexity { get; set; }
+}
+
+public sealed class FunctionLengthMetric
+{
+    public string File { get; set; } = string.Empty;
+    public string Function { get; set; } = string.Empty;
+    public int Line { get; set; }
+    public int Length { get; set; }
+}
+
+public sealed class DisabledRuleInfo
+{
+    public string RuleId { get; set; } = string.Empty;
+    public string Reason { get; set; } = string.Empty;
+    public string DisabledBy { get; set; } = string.Empty;
+    public DateTime DisabledAt { get; set; } = DateTime.Now;
+    public string RiskConfirmation { get; set; } = string.Empty;
 }
 
 public sealed class LogEntry

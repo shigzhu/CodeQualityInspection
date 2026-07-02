@@ -55,8 +55,8 @@ public sealed class CompileContextBuilder : ICompileContextBuilder
             ProjectFiles = projectFiles
                 .Distinct(StringComparer.OrdinalIgnoreCase)
                 .ToList(),
-            CStandard = "c11",
-            CppStandard = "c++14"
+            CStandard = config.Build.CStandard,
+            CppStandard = config.Build.CppStandard
         };
     }
 
