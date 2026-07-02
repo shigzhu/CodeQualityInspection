@@ -1,0 +1,614 @@
+﻿{
+    "schemaVersion":  "1.0.0",
+    "source":  "Huawei-CPP",
+    "rules":  [
+                  {
+                      "id":  "Quectel-CPP-001",
+                      "title":  "头文件中禁止使用 using namespace",
+                      "source":  "Huawei-CPP",
+                      "sourceRuleId":  "",
+                      "language":  [
+                                       "cpp"
+                                   ],
+                      "severity":  "Warning",
+                      "detection":  "clang-tidy",
+                      "defaultEnabled":  true,
+                      "allowDisable":  true,
+                      "disableRisk":  "关闭该规则后可能漏检相关代码质量或安全问题。",
+                      "description":  "头文件中禁止使用 using namespace",
+                      "suggestion":  "请参考规则说明修改代码。"
+                  },
+                  {
+                      "id":  "Quectel-CPP-002",
+                      "title":  "头文件中禁止定义非 inline 普通函数",
+                      "source":  "Huawei-CPP",
+                      "sourceRuleId":  "",
+                      "language":  [
+                                       "cpp"
+                                   ],
+                      "severity":  "Warning",
+                      "detection":  "clang-tidy",
+                      "defaultEnabled":  true,
+                      "allowDisable":  true,
+                      "disableRisk":  "关闭该规则后可能漏检相关代码质量或安全问题。",
+                      "description":  "头文件中禁止定义非 inline 普通函数",
+                      "suggestion":  "请参考规则说明修改代码。"
+                  },
+                  {
+                      "id":  "Quectel-CPP-003",
+                      "title":  "头文件应具有防重复包含保护",
+                      "source":  "Huawei-CPP",
+                      "sourceRuleId":  "",
+                      "language":  [
+                                       "cpp"
+                                   ],
+                      "severity":  "Warning",
+                      "detection":  "clang-tidy",
+                      "defaultEnabled":  true,
+                      "allowDisable":  true,
+                      "disableRisk":  "关闭该规则后可能漏检相关代码质量或安全问题。",
+                      "description":  "头文件应具有防重复包含保护",
+                      "suggestion":  "请参考规则说明修改代码。"
+                  },
+                  {
+                      "id":  "Quectel-CPP-004",
+                      "title":  "禁止在头文件中定义非必要全局变量",
+                      "source":  "Huawei-CPP",
+                      "sourceRuleId":  "",
+                      "language":  [
+                                       "cpp"
+                                   ],
+                      "severity":  "Warning",
+                      "detection":  "clang-tidy",
+                      "defaultEnabled":  true,
+                      "allowDisable":  true,
+                      "disableRisk":  "关闭该规则后可能漏检相关代码质量或安全问题。",
+                      "description":  "禁止在头文件中定义非必要全局变量",
+                      "suggestion":  "请参考规则说明修改代码。"
+                  },
+                  {
+                      "id":  "Quectel-CPP-005",
+                      "title":  "类存在虚函数时析构函数应为 virtual",
+                      "source":  "Huawei-CPP",
+                      "sourceRuleId":  "",
+                      "language":  [
+                                       "cpp"
+                                   ],
+                      "severity":  "Critical",
+                      "detection":  "clang-tidy",
+                      "defaultEnabled":  true,
+                      "allowDisable":  true,
+                      "disableRisk":  "关闭该规则后可能漏检相关代码质量或安全问题。",
+                      "description":  "类存在虚函数时析构函数应为 virtual",
+                      "suggestion":  "请参考规则说明修改代码。"
+                  },
+                  {
+                      "id":  "Quectel-CPP-006",
+                      "title":  "禁止通过非虚析构基类指针删除派生对象",
+                      "source":  "Huawei-CPP",
+                      "sourceRuleId":  "",
+                      "language":  [
+                                       "cpp"
+                                   ],
+                      "severity":  "Critical",
+                      "detection":  "clang-tidy",
+                      "defaultEnabled":  true,
+                      "allowDisable":  true,
+                      "disableRisk":  "关闭该规则后可能漏检相关代码质量或安全问题。",
+                      "description":  "禁止通过非虚析构基类指针删除派生对象",
+                      "suggestion":  "请参考规则说明修改代码。"
+                  },
+                  {
+                      "id":  "Quectel-CPP-007",
+                      "title":  "重写虚函数应使用 override",
+                      "source":  "Huawei-CPP",
+                      "sourceRuleId":  "",
+                      "language":  [
+                                       "cpp"
+                                   ],
+                      "severity":  "Suggestion",
+                      "detection":  "clang-tidy",
+                      "defaultEnabled":  true,
+                      "allowDisable":  true,
+                      "disableRisk":  "关闭该规则后可能漏检相关代码质量或安全问题。",
+                      "description":  "重写虚函数应使用 override",
+                      "suggestion":  "请参考规则说明修改代码。"
+                  },
+                  {
+                      "id":  "Quectel-CPP-008",
+                      "title":  "禁止在构造和析构函数中调用虚函数",
+                      "source":  "Huawei-CPP",
+                      "sourceRuleId":  "",
+                      "language":  [
+                                       "cpp"
+                                   ],
+                      "severity":  "Critical",
+                      "detection":  "clang-tidy",
+                      "defaultEnabled":  true,
+                      "allowDisable":  true,
+                      "disableRisk":  "关闭该规则后可能漏检相关代码质量或安全问题。",
+                      "description":  "禁止在构造和析构函数中调用虚函数",
+                      "suggestion":  "请参考规则说明修改代码。"
+                  },
+                  {
+                      "id":  "Quectel-CPP-009",
+                      "title":  "拥有资源的类应遵循拷贝控制规则",
+                      "source":  "Huawei-CPP",
+                      "sourceRuleId":  "",
+                      "language":  [
+                                       "cpp"
+                                   ],
+                      "severity":  "Critical",
+                      "detection":  "clang-tidy",
+                      "defaultEnabled":  true,
+                      "allowDisable":  true,
+                      "disableRisk":  "关闭该规则后可能漏检相关代码质量或安全问题。",
+                      "description":  "拥有资源的类应遵循拷贝控制规则",
+                      "suggestion":  "请参考规则说明修改代码。"
+                  },
+                  {
+                      "id":  "Quectel-CPP-010",
+                      "title":  "禁止裸 new/delete 管理资源，优先使用 RAII",
+                      "source":  "Huawei-CPP",
+                      "sourceRuleId":  "",
+                      "language":  [
+                                       "cpp"
+                                   ],
+                      "severity":  "Warning",
+                      "detection":  "clang-tidy",
+                      "defaultEnabled":  true,
+                      "allowDisable":  true,
+                      "disableRisk":  "关闭该规则后可能漏检相关代码质量或安全问题。",
+                      "description":  "禁止裸 new/delete 管理资源，优先使用 RAII",
+                      "suggestion":  "请参考规则说明修改代码。"
+                  },
+                  {
+                      "id":  "Quectel-CPP-011",
+                      "title":  "禁止内存申请后未释放",
+                      "source":  "Huawei-CPP",
+                      "sourceRuleId":  "",
+                      "language":  [
+                                       "cpp"
+                                   ],
+                      "severity":  "Critical",
+                      "detection":  "clang-tidy",
+                      "defaultEnabled":  true,
+                      "allowDisable":  true,
+                      "disableRisk":  "关闭该规则后可能漏检相关代码质量或安全问题。",
+                      "description":  "禁止内存申请后未释放",
+                      "suggestion":  "请参考规则说明修改代码。"
+                  },
+                  {
+                      "id":  "Quectel-CPP-012",
+                      "title":  "禁止释放后继续访问对象",
+                      "source":  "Huawei-CPP",
+                      "sourceRuleId":  "",
+                      "language":  [
+                                       "cpp"
+                                   ],
+                      "severity":  "Blocker",
+                      "detection":  "clang-tidy",
+                      "defaultEnabled":  true,
+                      "allowDisable":  true,
+                      "disableRisk":  "关闭该规则后可能漏检相关代码质量或安全问题。",
+                      "description":  "禁止释放后继续访问对象",
+                      "suggestion":  "请参考规则说明修改代码。"
+                  },
+                  {
+                      "id":  "Quectel-CPP-013",
+                      "title":  "禁止重复释放对象或资源",
+                      "source":  "Huawei-CPP",
+                      "sourceRuleId":  "",
+                      "language":  [
+                                       "cpp"
+                                   ],
+                      "severity":  "Blocker",
+                      "detection":  "clang-tidy",
+                      "defaultEnabled":  true,
+                      "allowDisable":  true,
+                      "disableRisk":  "关闭该规则后可能漏检相关代码质量或安全问题。",
+                      "description":  "禁止重复释放对象或资源",
+                      "suggestion":  "请参考规则说明修改代码。"
+                  },
+                  {
+                      "id":  "Quectel-CPP-014",
+                      "title":  "指针解引用前必须保证有效",
+                      "source":  "Huawei-CPP",
+                      "sourceRuleId":  "",
+                      "language":  [
+                                       "cpp"
+                                   ],
+                      "severity":  "Critical",
+                      "detection":  "clang-tidy",
+                      "defaultEnabled":  true,
+                      "allowDisable":  true,
+                      "disableRisk":  "关闭该规则后可能漏检相关代码质量或安全问题。",
+                      "description":  "指针解引用前必须保证有效",
+                      "suggestion":  "请参考规则说明修改代码。"
+                  },
+                  {
+                      "id":  "Quectel-CPP-015",
+                      "title":  "局部对象和变量应初始化后使用",
+                      "source":  "Huawei-CPP",
+                      "sourceRuleId":  "",
+                      "language":  [
+                                       "cpp"
+                                   ],
+                      "severity":  "Critical",
+                      "detection":  "clang-tidy",
+                      "defaultEnabled":  true,
+                      "allowDisable":  true,
+                      "disableRisk":  "关闭该规则后可能漏检相关代码质量或安全问题。",
+                      "description":  "局部对象和变量应初始化后使用",
+                      "suggestion":  "请参考规则说明修改代码。"
+                  },
+                  {
+                      "id":  "Quectel-CPP-016",
+                      "title":  "避免 C 风格强制类型转换",
+                      "source":  "Huawei-CPP",
+                      "sourceRuleId":  "",
+                      "language":  [
+                                       "cpp"
+                                   ],
+                      "severity":  "Warning",
+                      "detection":  "clang-tidy",
+                      "defaultEnabled":  true,
+                      "allowDisable":  true,
+                      "disableRisk":  "关闭该规则后可能漏检相关代码质量或安全问题。",
+                      "description":  "避免 C 风格强制类型转换",
+                      "suggestion":  "请参考规则说明修改代码。"
+                  },
+                  {
+                      "id":  "Quectel-CPP-017",
+                      "title":  "避免不安全的 reinterpret_cast",
+                      "source":  "Huawei-CPP",
+                      "sourceRuleId":  "",
+                      "language":  [
+                                       "cpp"
+                                   ],
+                      "severity":  "Critical",
+                      "detection":  "clang-tidy",
+                      "defaultEnabled":  true,
+                      "allowDisable":  true,
+                      "disableRisk":  "关闭该规则后可能漏检相关代码质量或安全问题。",
+                      "description":  "避免不安全的 reinterpret_cast",
+                      "suggestion":  "请参考规则说明修改代码。"
+                  },
+                  {
+                      "id":  "Quectel-CPP-018",
+                      "title":  "优先使用 nullptr，不使用 NULL 或 0 表示空指针",
+                      "source":  "Huawei-CPP",
+                      "sourceRuleId":  "",
+                      "language":  [
+                                       "cpp"
+                                   ],
+                      "severity":  "Suggestion",
+                      "detection":  "clang-tidy",
+                      "defaultEnabled":  true,
+                      "allowDisable":  true,
+                      "disableRisk":  "关闭该规则后可能漏检相关代码质量或安全问题。",
+                      "description":  "优先使用 nullptr，不使用 NULL 或 0 表示空指针",
+                      "suggestion":  "请参考规则说明修改代码。"
+                  },
+                  {
+                      "id":  "Quectel-CPP-019",
+                      "title":  "可不修改对象状态的成员函数应声明为 const",
+                      "source":  "Huawei-CPP",
+                      "sourceRuleId":  "",
+                      "language":  [
+                                       "cpp"
+                                   ],
+                      "severity":  "Suggestion",
+                      "detection":  "clang-tidy",
+                      "defaultEnabled":  true,
+                      "allowDisable":  true,
+                      "disableRisk":  "关闭该规则后可能漏检相关代码质量或安全问题。",
+                      "description":  "可不修改对象状态的成员函数应声明为 const",
+                      "suggestion":  "请参考规则说明修改代码。"
+                  },
+                  {
+                      "id":  "Quectel-CPP-020",
+                      "title":  "可不修改的变量和参数应使用 const",
+                      "source":  "Huawei-CPP",
+                      "sourceRuleId":  "",
+                      "language":  [
+                                       "cpp"
+                                   ],
+                      "severity":  "Suggestion",
+                      "detection":  "clang-tidy",
+                      "defaultEnabled":  true,
+                      "allowDisable":  true,
+                      "disableRisk":  "关闭该规则后可能漏检相关代码质量或安全问题。",
+                      "description":  "可不修改的变量和参数应使用 const",
+                      "suggestion":  "请参考规则说明修改代码。"
+                  },
+                  {
+                      "id":  "Quectel-CPP-021",
+                      "title":  "禁止忽略关键函数返回值",
+                      "source":  "Huawei-CPP",
+                      "sourceRuleId":  "",
+                      "language":  [
+                                       "cpp"
+                                   ],
+                      "severity":  "Warning",
+                      "detection":  "clang-tidy",
+                      "defaultEnabled":  true,
+                      "allowDisable":  true,
+                      "disableRisk":  "关闭该规则后可能漏检相关代码质量或安全问题。",
+                      "description":  "禁止忽略关键函数返回值",
+                      "suggestion":  "请参考规则说明修改代码。"
+                  },
+                  {
+                      "id":  "Quectel-CPP-022",
+                      "title":  "switch 语句应包含 default 分支",
+                      "source":  "Huawei-CPP",
+                      "sourceRuleId":  "",
+                      "language":  [
+                                       "cpp"
+                                   ],
+                      "severity":  "Warning",
+                      "detection":  "clang-tidy",
+                      "defaultEnabled":  true,
+                      "allowDisable":  true,
+                      "disableRisk":  "关闭该规则后可能漏检相关代码质量或安全问题。",
+                      "description":  "switch 语句应包含 default 分支",
+                      "suggestion":  "请参考规则说明修改代码。"
+                  },
+                  {
+                      "id":  "Quectel-CPP-023",
+                      "title":  "case 分支需要明确 break 或注释说明贯穿",
+                      "source":  "Huawei-CPP",
+                      "sourceRuleId":  "",
+                      "language":  [
+                                       "cpp"
+                                   ],
+                      "severity":  "Warning",
+                      "detection":  "clang-tidy",
+                      "defaultEnabled":  true,
+                      "allowDisable":  true,
+                      "disableRisk":  "关闭该规则后可能漏检相关代码质量或安全问题。",
+                      "description":  "case 分支需要明确 break 或注释说明贯穿",
+                      "suggestion":  "请参考规则说明修改代码。"
+                  },
+                  {
+                      "id":  "Quectel-CPP-024",
+                      "title":  "禁止捕获异常后完全忽略",
+                      "source":  "Huawei-CPP",
+                      "sourceRuleId":  "",
+                      "language":  [
+                                       "cpp"
+                                   ],
+                      "severity":  "Warning",
+                      "detection":  "clang-tidy",
+                      "defaultEnabled":  true,
+                      "allowDisable":  true,
+                      "disableRisk":  "关闭该规则后可能漏检相关代码质量或安全问题。",
+                      "description":  "禁止捕获异常后完全忽略",
+                      "suggestion":  "请参考规则说明修改代码。"
+                  },
+                  {
+                      "id":  "Quectel-CPP-025",
+                      "title":  "析构函数不应抛出异常",
+                      "source":  "Huawei-CPP",
+                      "sourceRuleId":  "",
+                      "language":  [
+                                       "cpp"
+                                   ],
+                      "severity":  "Critical",
+                      "detection":  "clang-tidy",
+                      "defaultEnabled":  true,
+                      "allowDisable":  true,
+                      "disableRisk":  "关闭该规则后可能漏检相关代码质量或安全问题。",
+                      "description":  "析构函数不应抛出异常",
+                      "suggestion":  "请参考规则说明修改代码。"
+                  },
+                  {
+                      "id":  "Quectel-CPP-026",
+                      "title":  "禁止使用已弃用或危险 C 库函数",
+                      "source":  "Huawei-CPP",
+                      "sourceRuleId":  "",
+                      "language":  [
+                                       "cpp"
+                                   ],
+                      "severity":  "Critical",
+                      "detection":  "clang-tidy",
+                      "defaultEnabled":  true,
+                      "allowDisable":  true,
+                      "disableRisk":  "关闭该规则后可能漏检相关代码质量或安全问题。",
+                      "description":  "禁止使用已弃用或危险 C 库函数",
+                      "suggestion":  "请参考规则说明修改代码。"
+                  },
+                  {
+                      "id":  "Quectel-CPP-027",
+                      "title":  "宏定义应避免替代类型安全的常量或函数",
+                      "source":  "Huawei-CPP",
+                      "sourceRuleId":  "",
+                      "language":  [
+                                       "cpp"
+                                   ],
+                      "severity":  "Suggestion",
+                      "detection":  "clang-tidy",
+                      "defaultEnabled":  true,
+                      "allowDisable":  true,
+                      "disableRisk":  "关闭该规则后可能漏检相关代码质量或安全问题。",
+                      "description":  "宏定义应避免替代类型安全的常量或函数",
+                      "suggestion":  "请参考规则说明修改代码。"
+                  },
+                  {
+                      "id":  "Quectel-CPP-028",
+                      "title":  "枚举、类、函数、变量命名应符合统一风格",
+                      "source":  "Huawei-CPP",
+                      "sourceRuleId":  "",
+                      "language":  [
+                                       "cpp"
+                                   ],
+                      "severity":  "Suggestion",
+                      "detection":  "clang-tidy",
+                      "defaultEnabled":  true,
+                      "allowDisable":  true,
+                      "disableRisk":  "关闭该规则后可能漏检相关代码质量或安全问题。",
+                      "description":  "枚举、类、函数、变量命名应符合统一风格",
+                      "suggestion":  "请参考规则说明修改代码。"
+                  },
+                  {
+                      "id":  "Quectel-CPP-029",
+                      "title":  "函数参数数量不宜过多",
+                      "source":  "Huawei-CPP",
+                      "sourceRuleId":  "",
+                      "language":  [
+                                       "cpp"
+                                   ],
+                      "severity":  "Suggestion",
+                      "detection":  "clang-tidy",
+                      "defaultEnabled":  true,
+                      "allowDisable":  true,
+                      "disableRisk":  "关闭该规则后可能漏检相关代码质量或安全问题。",
+                      "description":  "函数参数数量不宜过多",
+                      "suggestion":  "请参考规则说明修改代码。"
+                  },
+                  {
+                      "id":  "Quectel-CPP-030",
+                      "title":  "函数嵌套层级不宜过深",
+                      "source":  "Huawei-CPP",
+                      "sourceRuleId":  "",
+                      "language":  [
+                                       "cpp"
+                                   ],
+                      "severity":  "Warning",
+                      "detection":  "clang-tidy",
+                      "defaultEnabled":  true,
+                      "allowDisable":  true,
+                      "disableRisk":  "关闭该规则后可能漏检相关代码质量或安全问题。",
+                      "description":  "函数嵌套层级不宜过深",
+                      "suggestion":  "请参考规则说明修改代码。"
+                  },
+                  {
+                      "id":  "Quectel-CPP-031",
+                      "title":  "禁止大段注释掉的无效代码",
+                      "source":  "Huawei-CPP",
+                      "sourceRuleId":  "",
+                      "language":  [
+                                       "cpp"
+                                   ],
+                      "severity":  "Suggestion",
+                      "detection":  "clang-tidy",
+                      "defaultEnabled":  true,
+                      "allowDisable":  true,
+                      "disableRisk":  "关闭该规则后可能漏检相关代码质量或安全问题。",
+                      "description":  "禁止大段注释掉的无效代码",
+                      "suggestion":  "请参考规则说明修改代码。"
+                  },
+                  {
+                      "id":  "Quectel-CPP-032",
+                      "title":  "单行代码长度不宜过长",
+                      "source":  "Huawei-CPP",
+                      "sourceRuleId":  "",
+                      "language":  [
+                                       "cpp"
+                                   ],
+                      "severity":  "Suggestion",
+                      "detection":  "clang-tidy",
+                      "defaultEnabled":  true,
+                      "allowDisable":  true,
+                      "disableRisk":  "关闭该规则后可能漏检相关代码质量或安全问题。",
+                      "description":  "单行代码长度不宜过长",
+                      "suggestion":  "请参考规则说明修改代码。"
+                  },
+                  {
+                      "id":  "Quectel-CPP-033",
+                      "title":  "包含顺序应稳定，避免无用头文件",
+                      "source":  "Huawei-CPP",
+                      "sourceRuleId":  "",
+                      "language":  [
+                                       "cpp"
+                                   ],
+                      "severity":  "Suggestion",
+                      "detection":  "clang-tidy",
+                      "defaultEnabled":  true,
+                      "allowDisable":  true,
+                      "disableRisk":  "关闭该规则后可能漏检相关代码质量或安全问题。",
+                      "description":  "包含顺序应稳定，避免无用头文件",
+                      "suggestion":  "请参考规则说明修改代码。"
+                  },
+                  {
+                      "id":  "Quectel-CPP-034",
+                      "title":  "禁止循环中进行明显低效的重复计算",
+                      "source":  "Huawei-CPP",
+                      "sourceRuleId":  "",
+                      "language":  [
+                                       "cpp"
+                                   ],
+                      "severity":  "Suggestion",
+                      "detection":  "clang-tidy",
+                      "defaultEnabled":  true,
+                      "allowDisable":  true,
+                      "disableRisk":  "关闭该规则后可能漏检相关代码质量或安全问题。",
+                      "description":  "禁止循环中进行明显低效的重复计算",
+                      "suggestion":  "请参考规则说明修改代码。"
+                  },
+                  {
+                      "id":  "Quectel-CPP-035",
+                      "title":  "禁止返回局部对象的指针或引用",
+                      "source":  "Huawei-CPP",
+                      "sourceRuleId":  "",
+                      "language":  [
+                                       "cpp"
+                                   ],
+                      "severity":  "Blocker",
+                      "detection":  "clang-tidy",
+                      "defaultEnabled":  true,
+                      "allowDisable":  true,
+                      "disableRisk":  "关闭该规则后可能漏检相关代码质量或安全问题。",
+                      "description":  "禁止返回局部对象的指针或引用",
+                      "suggestion":  "请参考规则说明修改代码。"
+                  },
+                  {
+                      "id":  "Quectel-CPP-036",
+                      "title":  "禁止对象切片导致多态信息丢失",
+                      "source":  "Huawei-CPP",
+                      "sourceRuleId":  "",
+                      "language":  [
+                                       "cpp"
+                                   ],
+                      "severity":  "Warning",
+                      "detection":  "clang-tidy",
+                      "defaultEnabled":  true,
+                      "allowDisable":  true,
+                      "disableRisk":  "关闭该规则后可能漏检相关代码质量或安全问题。",
+                      "description":  "禁止对象切片导致多态信息丢失",
+                      "suggestion":  "请参考规则说明修改代码。"
+                  },
+                  {
+                      "id":  "Quectel-CPP-037",
+                      "title":  "函数圈复杂度不得超过 10",
+                      "source":  "Huawei-CPP",
+                      "sourceRuleId":  "",
+                      "language":  [
+                                       "cpp"
+                                   ],
+                      "severity":  "Warning",
+                      "detection":  "lizard",
+                      "defaultEnabled":  true,
+                      "allowDisable":  true,
+                      "disableRisk":  "关闭该规则后可能漏检相关代码质量或安全问题。",
+                      "description":  "函数圈复杂度不得超过 10",
+                      "suggestion":  "请参考规则说明修改代码。"
+                  },
+                  {
+                      "id":  "Quectel-CPP-038",
+                      "title":  "函数体代码行数不得超过 100 行",
+                      "source":  "Huawei-CPP",
+                      "sourceRuleId":  "",
+                      "language":  [
+                                       "cpp"
+                                   ],
+                      "severity":  "Warning",
+                      "detection":  "lizard",
+                      "defaultEnabled":  true,
+                      "allowDisable":  true,
+                      "disableRisk":  "关闭该规则后可能漏检相关代码质量或安全问题。",
+                      "description":  "函数体代码行数不得超过 100 行",
+                      "suggestion":  "请参考规则说明修改代码。"
+                  }
+              ]
+}

@@ -1,0 +1,86 @@
+{
+  "version": "1.0.0",
+  "project": {
+    "name": "",
+    "root": "",
+    "projectKey": ""
+  },
+  "input": {
+    "type": "directory",
+    "paths": [],
+    "fileList": "",
+    "sourceExtensions": [".c", ".cc", ".cpp", ".cxx"],
+    "headerExtensions": [".h", ".hh", ".hpp", ".hxx"],
+    "headerScanPolicy": {
+      "scanHeadersInDirectoryMode": false,
+      "allowHeaderAsExplicitInput": true,
+      "headerLanguageMode": "auto"
+    }
+  },
+  "build": {
+    "includeDirectories": [],
+    "defines": [],
+    "projectFiles": [],
+    "requireCompileContext": true,
+    "allowDegradedScan": false
+  },
+  "scan": {
+    "excludeDirectories": [
+      "third_party",
+      "3rdparty",
+      "external",
+      "extern",
+      "vendor",
+      "vendors",
+      "dependencies",
+      "deps",
+      "packages",
+      "build",
+      "out",
+      "bin",
+      "obj",
+      "Debug",
+      "Release",
+      "x64",
+      "x86",
+      ".git",
+      ".svn",
+      ".vs"
+    ],
+    "excludeFiles": ["moc_*.cpp", "ui_*.h", "qrc_*.cpp", "mocs_compilation.cpp"],
+    "excludePatterns": ["**/*_autogen/**", "**/GeneratedFiles/**"]
+  },
+  "engines": {
+    "clangTidy": {
+      "enabled": true,
+      "path": "tools\\llvm\\bin\\clang-tidy.exe"
+    },
+    "cppcheck": {
+      "enabled": true,
+      "path": "tools\\cppcheck\\cppcheck.exe"
+    },
+    "lizard": {
+      "enabled": true,
+      "path": "tools\\lizard\\lizard.exe"
+    }
+  },
+  "rules": {
+    "ruleIndex": "rules\\rules.index.json",
+    "profile": "default"
+  },
+  "baseline": {
+    "enabled": true,
+    "path": ""
+  },
+  "suppression": {
+    "enabled": true,
+    "path": ""
+  },
+  "report": {
+    "outputDirectory": "reports"
+  },
+  "runtime": {
+    "logDirectory": "logs",
+    "tempDirectory": "temp"
+  }
+}

@@ -1,0 +1,326 @@
+﻿{
+    "schemaVersion":  "1.0.0",
+    "source":  "CERT-CPP",
+    "rules":  [
+                  {
+                      "id":  "Quectel-CERT-CPP-001",
+                      "title":  "基类析构函数应支持多态删除",
+                      "source":  "CERT-CPP",
+                      "sourceRuleId":  "",
+                      "language":  [
+                                       "cpp"
+                                   ],
+                      "severity":  "Critical",
+                      "detection":  "clang-tidy",
+                      "defaultEnabled":  true,
+                      "allowDisable":  true,
+                      "disableRisk":  "关闭该规则后可能漏检相关代码质量或安全问题。",
+                      "description":  "基类析构函数应支持多态删除",
+                      "suggestion":  "请参考规则说明修改代码。"
+                  },
+                  {
+                      "id":  "Quectel-CERT-CPP-002",
+                      "title":  "拷贝构造和拷贝赋值应正确处理自赋值",
+                      "source":  "CERT-CPP",
+                      "sourceRuleId":  "",
+                      "language":  [
+                                       "cpp"
+                                   ],
+                      "severity":  "Warning",
+                      "detection":  "clang-tidy",
+                      "defaultEnabled":  true,
+                      "allowDisable":  true,
+                      "disableRisk":  "关闭该规则后可能漏检相关代码质量或安全问题。",
+                      "description":  "拷贝构造和拷贝赋值应正确处理自赋值",
+                      "suggestion":  "请参考规则说明修改代码。"
+                  },
+                  {
+                      "id":  "Quectel-CERT-CPP-003",
+                      "title":  "析构函数不得抛出异常",
+                      "source":  "CERT-CPP",
+                      "sourceRuleId":  "",
+                      "language":  [
+                                       "cpp"
+                                   ],
+                      "severity":  "Critical",
+                      "detection":  "clang-tidy",
+                      "defaultEnabled":  true,
+                      "allowDisable":  true,
+                      "disableRisk":  "关闭该规则后可能漏检相关代码质量或安全问题。",
+                      "description":  "析构函数不得抛出异常",
+                      "suggestion":  "请参考规则说明修改代码。"
+                  },
+                  {
+                      "id":  "Quectel-CERT-CPP-004",
+                      "title":  "构造函数中资源获取失败应保持对象状态安全",
+                      "source":  "CERT-CPP",
+                      "sourceRuleId":  "",
+                      "language":  [
+                                       "cpp"
+                                   ],
+                      "severity":  "Warning",
+                      "detection":  "manual",
+                      "defaultEnabled":  false,
+                      "allowDisable":  true,
+                      "disableRisk":  "关闭该规则后可能漏检相关代码质量或安全问题。",
+                      "description":  "构造函数中资源获取失败应保持对象状态安全",
+                      "suggestion":  "请参考规则说明修改代码。"
+                  },
+                  {
+                      "id":  "Quectel-CERT-CPP-005",
+                      "title":  "禁止访问生命周期已结束的对象",
+                      "source":  "CERT-CPP",
+                      "sourceRuleId":  "",
+                      "language":  [
+                                       "cpp"
+                                   ],
+                      "severity":  "Blocker",
+                      "detection":  "clang-tidy",
+                      "defaultEnabled":  true,
+                      "allowDisable":  true,
+                      "disableRisk":  "关闭该规则后可能漏检相关代码质量或安全问题。",
+                      "description":  "禁止访问生命周期已结束的对象",
+                      "suggestion":  "请参考规则说明修改代码。"
+                  },
+                  {
+                      "id":  "Quectel-CERT-CPP-006",
+                      "title":  "动态分配内存必须正确释放",
+                      "source":  "CERT-CPP",
+                      "sourceRuleId":  "",
+                      "language":  [
+                                       "cpp"
+                                   ],
+                      "severity":  "Critical",
+                      "detection":  "clang-tidy",
+                      "defaultEnabled":  true,
+                      "allowDisable":  true,
+                      "disableRisk":  "关闭该规则后可能漏检相关代码质量或安全问题。",
+                      "description":  "动态分配内存必须正确释放",
+                      "suggestion":  "请参考规则说明修改代码。"
+                  },
+                  {
+                      "id":  "Quectel-CERT-CPP-007",
+                      "title":  "禁止使用不匹配的分配和释放形式",
+                      "source":  "CERT-CPP",
+                      "sourceRuleId":  "",
+                      "language":  [
+                                       "cpp"
+                                   ],
+                      "severity":  "Critical",
+                      "detection":  "clang-tidy",
+                      "defaultEnabled":  true,
+                      "allowDisable":  true,
+                      "disableRisk":  "关闭该规则后可能漏检相关代码质量或安全问题。",
+                      "description":  "禁止使用不匹配的分配和释放形式",
+                      "suggestion":  "请参考规则说明修改代码。"
+                  },
+                  {
+                      "id":  "Quectel-CERT-CPP-008",
+                      "title":  "禁止空指针解引用",
+                      "source":  "CERT-CPP",
+                      "sourceRuleId":  "",
+                      "language":  [
+                                       "cpp"
+                                   ],
+                      "severity":  "Blocker",
+                      "detection":  "clang-tidy",
+                      "defaultEnabled":  true,
+                      "allowDisable":  true,
+                      "disableRisk":  "关闭该规则后可能漏检相关代码质量或安全问题。",
+                      "description":  "禁止空指针解引用",
+                      "suggestion":  "请参考规则说明修改代码。"
+                  },
+                  {
+                      "id":  "Quectel-CERT-CPP-009",
+                      "title":  "表达式求值不应依赖未指定顺序",
+                      "source":  "CERT-CPP",
+                      "sourceRuleId":  "",
+                      "language":  [
+                                       "cpp"
+                                   ],
+                      "severity":  "Warning",
+                      "detection":  "clang-tidy",
+                      "defaultEnabled":  true,
+                      "allowDisable":  true,
+                      "disableRisk":  "关闭该规则后可能漏检相关代码质量或安全问题。",
+                      "description":  "表达式求值不应依赖未指定顺序",
+                      "suggestion":  "请参考规则说明修改代码。"
+                  },
+                  {
+                      "id":  "Quectel-CERT-CPP-010",
+                      "title":  "不应忽略具有错误含义的返回值",
+                      "source":  "CERT-CPP",
+                      "sourceRuleId":  "",
+                      "language":  [
+                                       "cpp"
+                                   ],
+                      "severity":  "Warning",
+                      "detection":  "clang-tidy",
+                      "defaultEnabled":  true,
+                      "allowDisable":  true,
+                      "disableRisk":  "关闭该规则后可能漏检相关代码质量或安全问题。",
+                      "description":  "不应忽略具有错误含义的返回值",
+                      "suggestion":  "请参考规则说明修改代码。"
+                  },
+                  {
+                      "id":  "Quectel-CERT-CPP-011",
+                      "title":  "异常处理不应捕获后完全忽略",
+                      "source":  "CERT-CPP",
+                      "sourceRuleId":  "",
+                      "language":  [
+                                       "cpp"
+                                   ],
+                      "severity":  "Warning",
+                      "detection":  "clang-tidy",
+                      "defaultEnabled":  true,
+                      "allowDisable":  true,
+                      "disableRisk":  "关闭该规则后可能漏检相关代码质量或安全问题。",
+                      "description":  "异常处理不应捕获后完全忽略",
+                      "suggestion":  "请参考规则说明修改代码。"
+                  },
+                  {
+                      "id":  "Quectel-CERT-CPP-012",
+                      "title":  "禁止从析构函数中逃逸异常",
+                      "source":  "CERT-CPP",
+                      "sourceRuleId":  "",
+                      "language":  [
+                                       "cpp"
+                                   ],
+                      "severity":  "Critical",
+                      "detection":  "clang-tidy",
+                      "defaultEnabled":  true,
+                      "allowDisable":  true,
+                      "disableRisk":  "关闭该规则后可能漏检相关代码质量或安全问题。",
+                      "description":  "禁止从析构函数中逃逸异常",
+                      "suggestion":  "请参考规则说明修改代码。"
+                  },
+                  {
+                      "id":  "Quectel-CERT-CPP-013",
+                      "title":  "禁止返回局部对象的引用或指针",
+                      "source":  "CERT-CPP",
+                      "sourceRuleId":  "",
+                      "language":  [
+                                       "cpp"
+                                   ],
+                      "severity":  "Blocker",
+                      "detection":  "clang-tidy",
+                      "defaultEnabled":  true,
+                      "allowDisable":  true,
+                      "disableRisk":  "关闭该规则后可能漏检相关代码质量或安全问题。",
+                      "description":  "禁止返回局部对象的引用或指针",
+                      "suggestion":  "请参考规则说明修改代码。"
+                  },
+                  {
+                      "id":  "Quectel-CERT-CPP-014",
+                      "title":  "禁止对象切片破坏多态语义",
+                      "source":  "CERT-CPP",
+                      "sourceRuleId":  "",
+                      "language":  [
+                                       "cpp"
+                                   ],
+                      "severity":  "Warning",
+                      "detection":  "clang-tidy",
+                      "defaultEnabled":  true,
+                      "allowDisable":  true,
+                      "disableRisk":  "关闭该规则后可能漏检相关代码质量或安全问题。",
+                      "description":  "禁止对象切片破坏多态语义",
+                      "suggestion":  "请参考规则说明修改代码。"
+                  },
+                  {
+                      "id":  "Quectel-CERT-CPP-015",
+                      "title":  "禁止越界访问容器或数组",
+                      "source":  "CERT-CPP",
+                      "sourceRuleId":  "",
+                      "language":  [
+                                       "cpp"
+                                   ],
+                      "severity":  "Critical",
+                      "detection":  "clang-tidy",
+                      "defaultEnabled":  true,
+                      "allowDisable":  true,
+                      "disableRisk":  "关闭该规则后可能漏检相关代码质量或安全问题。",
+                      "description":  "禁止越界访问容器或数组",
+                      "suggestion":  "请参考规则说明修改代码。"
+                  },
+                  {
+                      "id":  "Quectel-CERT-CPP-016",
+                      "title":  "迭代器使用前必须保证有效",
+                      "source":  "CERT-CPP",
+                      "sourceRuleId":  "",
+                      "language":  [
+                                       "cpp"
+                                   ],
+                      "severity":  "Critical",
+                      "detection":  "clang-tidy",
+                      "defaultEnabled":  true,
+                      "allowDisable":  true,
+                      "disableRisk":  "关闭该规则后可能漏检相关代码质量或安全问题。",
+                      "description":  "迭代器使用前必须保证有效",
+                      "suggestion":  "请参考规则说明修改代码。"
+                  },
+                  {
+                      "id":  "Quectel-CERT-CPP-017",
+                      "title":  "禁止对无效迭代器执行解引用",
+                      "source":  "CERT-CPP",
+                      "sourceRuleId":  "",
+                      "language":  [
+                                       "cpp"
+                                   ],
+                      "severity":  "Critical",
+                      "detection":  "clang-tidy",
+                      "defaultEnabled":  true,
+                      "allowDisable":  true,
+                      "disableRisk":  "关闭该规则后可能漏检相关代码质量或安全问题。",
+                      "description":  "禁止对无效迭代器执行解引用",
+                      "suggestion":  "请参考规则说明修改代码。"
+                  },
+                  {
+                      "id":  "Quectel-CERT-CPP-018",
+                      "title":  "类型转换不得破坏对象有效类型",
+                      "source":  "CERT-CPP",
+                      "sourceRuleId":  "",
+                      "language":  [
+                                       "cpp"
+                                   ],
+                      "severity":  "Critical",
+                      "detection":  "clang-tidy",
+                      "defaultEnabled":  true,
+                      "allowDisable":  true,
+                      "disableRisk":  "关闭该规则后可能漏检相关代码质量或安全问题。",
+                      "description":  "类型转换不得破坏对象有效类型",
+                      "suggestion":  "请参考规则说明修改代码。"
+                  },
+                  {
+                      "id":  "Quectel-CERT-CPP-019",
+                      "title":  "多线程共享对象访问必须同步",
+                      "source":  "CERT-CPP",
+                      "sourceRuleId":  "",
+                      "language":  [
+                                       "cpp"
+                                   ],
+                      "severity":  "Warning",
+                      "detection":  "manual",
+                      "defaultEnabled":  false,
+                      "allowDisable":  true,
+                      "disableRisk":  "关闭该规则后可能漏检相关代码质量或安全问题。",
+                      "description":  "多线程共享对象访问必须同步",
+                      "suggestion":  "请参考规则说明修改代码。"
+                  },
+                  {
+                      "id":  "Quectel-CERT-CPP-020",
+                      "title":  "禁止使用危险或过时的库接口",
+                      "source":  "CERT-CPP",
+                      "sourceRuleId":  "",
+                      "language":  [
+                                       "cpp"
+                                   ],
+                      "severity":  "Warning",
+                      "detection":  "clang-tidy",
+                      "defaultEnabled":  true,
+                      "allowDisable":  true,
+                      "disableRisk":  "关闭该规则后可能漏检相关代码质量或安全问题。",
+                      "description":  "禁止使用危险或过时的库接口",
+                      "suggestion":  "请参考规则说明修改代码。"
+                  }
+              ]
+}

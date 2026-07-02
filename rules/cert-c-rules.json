@@ -1,0 +1,326 @@
+﻿{
+    "schemaVersion":  "1.0.0",
+    "source":  "CERT-C",
+    "rules":  [
+                  {
+                      "id":  "Quectel-CERT-C-001",
+                      "title":  "字符串转换整数时必须检查转换错误",
+                      "source":  "CERT-C",
+                      "sourceRuleId":  "",
+                      "language":  [
+                                       "c"
+                                   ],
+                      "severity":  "Critical",
+                      "detection":  "clang-tidy",
+                      "defaultEnabled":  true,
+                      "allowDisable":  true,
+                      "disableRisk":  "关闭该规则后可能漏检相关代码质量或安全问题。",
+                      "description":  "字符串转换整数时必须检查转换错误",
+                      "suggestion":  "请参考规则说明修改代码。"
+                  },
+                  {
+                      "id":  "Quectel-CERT-C-002",
+                      "title":  "不应忽略错误指示或异常返回值",
+                      "source":  "CERT-C",
+                      "sourceRuleId":  "",
+                      "language":  [
+                                       "c"
+                                   ],
+                      "severity":  "Warning",
+                      "detection":  "clang-tidy",
+                      "defaultEnabled":  true,
+                      "allowDisable":  true,
+                      "disableRisk":  "关闭该规则后可能漏检相关代码质量或安全问题。",
+                      "description":  "不应忽略错误指示或异常返回值",
+                      "suggestion":  "请参考规则说明修改代码。"
+                  },
+                  {
+                      "id":  "Quectel-CERT-C-003",
+                      "title":  "禁止读取未初始化对象",
+                      "source":  "CERT-C",
+                      "sourceRuleId":  "",
+                      "language":  [
+                                       "c"
+                                   ],
+                      "severity":  "Critical",
+                      "detection":  "clang-tidy",
+                      "defaultEnabled":  true,
+                      "allowDisable":  true,
+                      "disableRisk":  "关闭该规则后可能漏检相关代码质量或安全问题。",
+                      "description":  "禁止读取未初始化对象",
+                      "suggestion":  "请参考规则说明修改代码。"
+                  },
+                  {
+                      "id":  "Quectel-CERT-C-004",
+                      "title":  "不得越界访问数组",
+                      "source":  "CERT-C",
+                      "sourceRuleId":  "",
+                      "language":  [
+                                       "c"
+                                   ],
+                      "severity":  "Blocker",
+                      "detection":  "clang-tidy",
+                      "defaultEnabled":  true,
+                      "allowDisable":  true,
+                      "disableRisk":  "关闭该规则后可能漏检相关代码质量或安全问题。",
+                      "description":  "不得越界访问数组",
+                      "suggestion":  "请参考规则说明修改代码。"
+                  },
+                  {
+                      "id":  "Quectel-CERT-C-005",
+                      "title":  "字符串必须以空字符正确终止",
+                      "source":  "CERT-C",
+                      "sourceRuleId":  "",
+                      "language":  [
+                                       "c"
+                                   ],
+                      "severity":  "Critical",
+                      "detection":  "clang-tidy",
+                      "defaultEnabled":  true,
+                      "allowDisable":  true,
+                      "disableRisk":  "关闭该规则后可能漏检相关代码质量或安全问题。",
+                      "description":  "字符串必须以空字符正确终止",
+                      "suggestion":  "请参考规则说明修改代码。"
+                  },
+                  {
+                      "id":  "Quectel-CERT-C-006",
+                      "title":  "字符串拷贝必须保证目标空间足够",
+                      "source":  "CERT-C",
+                      "sourceRuleId":  "",
+                      "language":  [
+                                       "c"
+                                   ],
+                      "severity":  "Critical",
+                      "detection":  "clang-tidy",
+                      "defaultEnabled":  true,
+                      "allowDisable":  true,
+                      "disableRisk":  "关闭该规则后可能漏检相关代码质量或安全问题。",
+                      "description":  "字符串拷贝必须保证目标空间足够",
+                      "suggestion":  "请参考规则说明修改代码。"
+                  },
+                  {
+                      "id":  "Quectel-CERT-C-007",
+                      "title":  "禁止使用已释放内存",
+                      "source":  "CERT-C",
+                      "sourceRuleId":  "",
+                      "language":  [
+                                       "c"
+                                   ],
+                      "severity":  "Blocker",
+                      "detection":  "clang-tidy",
+                      "defaultEnabled":  true,
+                      "allowDisable":  true,
+                      "disableRisk":  "关闭该规则后可能漏检相关代码质量或安全问题。",
+                      "description":  "禁止使用已释放内存",
+                      "suggestion":  "请参考规则说明修改代码。"
+                  },
+                  {
+                      "id":  "Quectel-CERT-C-008",
+                      "title":  "动态分配的内存只释放一次",
+                      "source":  "CERT-C",
+                      "sourceRuleId":  "",
+                      "language":  [
+                                       "c"
+                                   ],
+                      "severity":  "Blocker",
+                      "detection":  "clang-tidy",
+                      "defaultEnabled":  true,
+                      "allowDisable":  true,
+                      "disableRisk":  "关闭该规则后可能漏检相关代码质量或安全问题。",
+                      "description":  "动态分配的内存只释放一次",
+                      "suggestion":  "请参考规则说明修改代码。"
+                  },
+                  {
+                      "id":  "Quectel-CERT-C-009",
+                      "title":  "动态内存申请结果必须检查",
+                      "source":  "CERT-C",
+                      "sourceRuleId":  "",
+                      "language":  [
+                                       "c"
+                                   ],
+                      "severity":  "Critical",
+                      "detection":  "clang-tidy",
+                      "defaultEnabled":  true,
+                      "allowDisable":  true,
+                      "disableRisk":  "关闭该规则后可能漏检相关代码质量或安全问题。",
+                      "description":  "动态内存申请结果必须检查",
+                      "suggestion":  "请参考规则说明修改代码。"
+                  },
+                  {
+                      "id":  "Quectel-CERT-C-010",
+                      "title":  "禁止对无效指针执行指针运算",
+                      "source":  "CERT-C",
+                      "sourceRuleId":  "",
+                      "language":  [
+                                       "c"
+                                   ],
+                      "severity":  "Critical",
+                      "detection":  "clang-tidy",
+                      "defaultEnabled":  true,
+                      "allowDisable":  true,
+                      "disableRisk":  "关闭该规则后可能漏检相关代码质量或安全问题。",
+                      "description":  "禁止对无效指针执行指针运算",
+                      "suggestion":  "请参考规则说明修改代码。"
+                  },
+                  {
+                      "id":  "Quectel-CERT-C-011",
+                      "title":  "禁止除零和取模零",
+                      "source":  "CERT-C",
+                      "sourceRuleId":  "",
+                      "language":  [
+                                       "c"
+                                   ],
+                      "severity":  "Blocker",
+                      "detection":  "clang-tidy",
+                      "defaultEnabled":  true,
+                      "allowDisable":  true,
+                      "disableRisk":  "关闭该规则后可能漏检相关代码质量或安全问题。",
+                      "description":  "禁止除零和取模零",
+                      "suggestion":  "请参考规则说明修改代码。"
+                  },
+                  {
+                      "id":  "Quectel-CERT-C-012",
+                      "title":  "整数转换不得导致截断或符号错误",
+                      "source":  "CERT-C",
+                      "sourceRuleId":  "",
+                      "language":  [
+                                       "c"
+                                   ],
+                      "severity":  "Warning",
+                      "detection":  "clang-tidy",
+                      "defaultEnabled":  true,
+                      "allowDisable":  true,
+                      "disableRisk":  "关闭该规则后可能漏检相关代码质量或安全问题。",
+                      "description":  "整数转换不得导致截断或符号错误",
+                      "suggestion":  "请参考规则说明修改代码。"
+                  },
+                  {
+                      "id":  "Quectel-CERT-C-013",
+                      "title":  "整数运算应避免溢出风险",
+                      "source":  "CERT-C",
+                      "sourceRuleId":  "",
+                      "language":  [
+                                       "c"
+                                   ],
+                      "severity":  "Warning",
+                      "detection":  "clang-tidy",
+                      "defaultEnabled":  true,
+                      "allowDisable":  true,
+                      "disableRisk":  "关闭该规则后可能漏检相关代码质量或安全问题。",
+                      "description":  "整数运算应避免溢出风险",
+                      "suggestion":  "请参考规则说明修改代码。"
+                  },
+                  {
+                      "id":  "Quectel-CERT-C-014",
+                      "title":  "格式化输入输出参数类型必须匹配",
+                      "source":  "CERT-C",
+                      "sourceRuleId":  "",
+                      "language":  [
+                                       "c"
+                                   ],
+                      "severity":  "Critical",
+                      "detection":  "clang-tidy",
+                      "defaultEnabled":  true,
+                      "allowDisable":  true,
+                      "disableRisk":  "关闭该规则后可能漏检相关代码质量或安全问题。",
+                      "description":  "格式化输入输出参数类型必须匹配",
+                      "suggestion":  "请参考规则说明修改代码。"
+                  },
+                  {
+                      "id":  "Quectel-CERT-C-015",
+                      "title":  "禁止使用不受信任的格式化字符串",
+                      "source":  "CERT-C",
+                      "sourceRuleId":  "",
+                      "language":  [
+                                       "c"
+                                   ],
+                      "severity":  "Critical",
+                      "detection":  "clang-tidy",
+                      "defaultEnabled":  true,
+                      "allowDisable":  true,
+                      "disableRisk":  "关闭该规则后可能漏检相关代码质量或安全问题。",
+                      "description":  "禁止使用不受信任的格式化字符串",
+                      "suggestion":  "请参考规则说明修改代码。"
+                  },
+                  {
+                      "id":  "Quectel-CERT-C-016",
+                      "title":  "文件操作后必须检查错误状态",
+                      "source":  "CERT-C",
+                      "sourceRuleId":  "",
+                      "language":  [
+                                       "c"
+                                   ],
+                      "severity":  "Warning",
+                      "detection":  "clang-tidy",
+                      "defaultEnabled":  true,
+                      "allowDisable":  true,
+                      "disableRisk":  "关闭该规则后可能漏检相关代码质量或安全问题。",
+                      "description":  "文件操作后必须检查错误状态",
+                      "suggestion":  "请参考规则说明修改代码。"
+                  },
+                  {
+                      "id":  "Quectel-CERT-C-017",
+                      "title":  "信号处理函数中只能调用异步信号安全函数",
+                      "source":  "CERT-C",
+                      "sourceRuleId":  "",
+                      "language":  [
+                                       "c"
+                                   ],
+                      "severity":  "Warning",
+                      "detection":  "manual",
+                      "defaultEnabled":  false,
+                      "allowDisable":  true,
+                      "disableRisk":  "关闭该规则后可能漏检相关代码质量或安全问题。",
+                      "description":  "信号处理函数中只能调用异步信号安全函数",
+                      "suggestion":  "请参考规则说明修改代码。"
+                  },
+                  {
+                      "id":  "Quectel-CERT-C-018",
+                      "title":  "多线程共享数据必须受同步保护",
+                      "source":  "CERT-C",
+                      "sourceRuleId":  "",
+                      "language":  [
+                                       "c"
+                                   ],
+                      "severity":  "Warning",
+                      "detection":  "manual",
+                      "defaultEnabled":  false,
+                      "allowDisable":  true,
+                      "disableRisk":  "关闭该规则后可能漏检相关代码质量或安全问题。",
+                      "description":  "多线程共享数据必须受同步保护",
+                      "suggestion":  "请参考规则说明修改代码。"
+                  },
+                  {
+                      "id":  "Quectel-CERT-C-019",
+                      "title":  "禁止使用危险临时文件创建方式",
+                      "source":  "CERT-C",
+                      "sourceRuleId":  "",
+                      "language":  [
+                                       "c"
+                                   ],
+                      "severity":  "Warning",
+                      "detection":  "clang-tidy",
+                      "defaultEnabled":  true,
+                      "allowDisable":  true,
+                      "disableRisk":  "关闭该规则后可能漏检相关代码质量或安全问题。",
+                      "description":  "禁止使用危险临时文件创建方式",
+                      "suggestion":  "请参考规则说明修改代码。"
+                  },
+                  {
+                      "id":  "Quectel-CERT-C-020",
+                      "title":  "禁止返回局部对象地址",
+                      "source":  "CERT-C",
+                      "sourceRuleId":  "",
+                      "language":  [
+                                       "c"
+                                   ],
+                      "severity":  "Blocker",
+                      "detection":  "clang-tidy",
+                      "defaultEnabled":  true,
+                      "allowDisable":  true,
+                      "disableRisk":  "关闭该规则后可能漏检相关代码质量或安全问题。",
+                      "description":  "禁止返回局部对象地址",
+                      "suggestion":  "请参考规则说明修改代码。"
+                  }
+              ]
+}

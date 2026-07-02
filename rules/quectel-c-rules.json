@@ -1,0 +1,358 @@
+﻿{
+    "schemaVersion":  "1.0.0",
+    "source":  "Huawei-C",
+    "rules":  [
+                  {
+                      "id":  "Quectel-C-001",
+                      "title":  "禁止使用 gets 等无边界输入函数",
+                      "source":  "Huawei-C",
+                      "sourceRuleId":  "",
+                      "language":  [
+                                       "c"
+                                   ],
+                      "severity":  "Blocker",
+                      "detection":  "builtin",
+                      "defaultEnabled":  true,
+                      "allowDisable":  true,
+                      "disableRisk":  "关闭该规则后可能漏检相关代码质量或安全问题。",
+                      "description":  "禁止使用 gets 等无边界输入函数",
+                      "suggestion":  "请参考规则说明修改代码。"
+                  },
+                  {
+                      "id":  "Quectel-C-002",
+                      "title":  "禁止使用不限制长度的字符串拷贝函数",
+                      "source":  "Huawei-C",
+                      "sourceRuleId":  "",
+                      "language":  [
+                                       "c"
+                                   ],
+                      "severity":  "Critical",
+                      "detection":  "builtin",
+                      "defaultEnabled":  true,
+                      "allowDisable":  true,
+                      "disableRisk":  "关闭该规则后可能漏检相关代码质量或安全问题。",
+                      "description":  "禁止使用不限制长度的字符串拷贝函数",
+                      "suggestion":  "请参考规则说明修改代码。"
+                  },
+                  {
+                      "id":  "Quectel-C-003",
+                      "title":  "禁止使用不限制长度的格式化输出函数",
+                      "source":  "Huawei-C",
+                      "sourceRuleId":  "",
+                      "language":  [
+                                       "c"
+                                   ],
+                      "severity":  "Critical",
+                      "detection":  "builtin",
+                      "defaultEnabled":  true,
+                      "allowDisable":  true,
+                      "disableRisk":  "关闭该规则后可能漏检相关代码质量或安全问题。",
+                      "description":  "禁止使用不限制长度的格式化输出函数",
+                      "suggestion":  "请参考规则说明修改代码。"
+                  },
+                  {
+                      "id":  "Quectel-C-004",
+                      "title":  "使用数组时必须保证下标边界有效",
+                      "source":  "Huawei-C",
+                      "sourceRuleId":  "",
+                      "language":  [
+                                       "c"
+                                   ],
+                      "severity":  "Critical",
+                      "detection":  "builtin",
+                      "defaultEnabled":  true,
+                      "allowDisable":  true,
+                      "disableRisk":  "关闭该规则后可能漏检相关代码质量或安全问题。",
+                      "description":  "使用数组时必须保证下标边界有效",
+                      "suggestion":  "请参考规则说明修改代码。"
+                  },
+                  {
+                      "id":  "Quectel-C-005",
+                      "title":  "指针使用前必须判空或保证有效",
+                      "source":  "Huawei-C",
+                      "sourceRuleId":  "",
+                      "language":  [
+                                       "c"
+                                   ],
+                      "severity":  "Critical",
+                      "detection":  "builtin",
+                      "defaultEnabled":  true,
+                      "allowDisable":  true,
+                      "disableRisk":  "关闭该规则后可能漏检相关代码质量或安全问题。",
+                      "description":  "指针使用前必须判空或保证有效",
+                      "suggestion":  "请参考规则说明修改代码。"
+                  },
+                  {
+                      "id":  "Quectel-C-006",
+                      "title":  "局部变量必须初始化后再使用",
+                      "source":  "Huawei-C",
+                      "sourceRuleId":  "",
+                      "language":  [
+                                       "c"
+                                   ],
+                      "severity":  "Critical",
+                      "detection":  "builtin",
+                      "defaultEnabled":  true,
+                      "allowDisable":  true,
+                      "disableRisk":  "关闭该规则后可能漏检相关代码质量或安全问题。",
+                      "description":  "局部变量必须初始化后再使用",
+                      "suggestion":  "请参考规则说明修改代码。"
+                  },
+                  {
+                      "id":  "Quectel-C-007",
+                      "title":  "动态内存申请结果必须检查",
+                      "source":  "Huawei-C",
+                      "sourceRuleId":  "",
+                      "language":  [
+                                       "c"
+                                   ],
+                      "severity":  "Critical",
+                      "detection":  "builtin",
+                      "defaultEnabled":  true,
+                      "allowDisable":  true,
+                      "disableRisk":  "关闭该规则后可能漏检相关代码质量或安全问题。",
+                      "description":  "动态内存申请结果必须检查",
+                      "suggestion":  "请参考规则说明修改代码。"
+                  },
+                  {
+                      "id":  "Quectel-C-008",
+                      "title":  "动态申请的内存必须在所有路径释放",
+                      "source":  "Huawei-C",
+                      "sourceRuleId":  "",
+                      "language":  [
+                                       "c"
+                                   ],
+                      "severity":  "Critical",
+                      "detection":  "builtin",
+                      "defaultEnabled":  true,
+                      "allowDisable":  true,
+                      "disableRisk":  "关闭该规则后可能漏检相关代码质量或安全问题。",
+                      "description":  "动态申请的内存必须在所有路径释放",
+                      "suggestion":  "请参考规则说明修改代码。"
+                  },
+                  {
+                      "id":  "Quectel-C-009",
+                      "title":  "禁止重复释放同一内存资源",
+                      "source":  "Huawei-C",
+                      "sourceRuleId":  "",
+                      "language":  [
+                                       "c"
+                                   ],
+                      "severity":  "Blocker",
+                      "detection":  "builtin",
+                      "defaultEnabled":  true,
+                      "allowDisable":  true,
+                      "disableRisk":  "关闭该规则后可能漏检相关代码质量或安全问题。",
+                      "description":  "禁止重复释放同一内存资源",
+                      "suggestion":  "请参考规则说明修改代码。"
+                  },
+                  {
+                      "id":  "Quectel-C-010",
+                      "title":  "禁止释放后继续访问内存",
+                      "source":  "Huawei-C",
+                      "sourceRuleId":  "",
+                      "language":  [
+                                       "c"
+                                   ],
+                      "severity":  "Blocker",
+                      "detection":  "builtin",
+                      "defaultEnabled":  true,
+                      "allowDisable":  true,
+                      "disableRisk":  "关闭该规则后可能漏检相关代码质量或安全问题。",
+                      "description":  "禁止释放后继续访问内存",
+                      "suggestion":  "请参考规则说明修改代码。"
+                  },
+                  {
+                      "id":  "Quectel-C-011",
+                      "title":  "文件、句柄、锁等资源申请后必须释放",
+                      "source":  "Huawei-C",
+                      "sourceRuleId":  "",
+                      "language":  [
+                                       "c"
+                                   ],
+                      "severity":  "Critical",
+                      "detection":  "builtin",
+                      "defaultEnabled":  true,
+                      "allowDisable":  true,
+                      "disableRisk":  "关闭该规则后可能漏检相关代码质量或安全问题。",
+                      "description":  "文件、句柄、锁等资源申请后必须释放",
+                      "suggestion":  "请参考规则说明修改代码。"
+                  },
+                  {
+                      "id":  "Quectel-C-012",
+                      "title":  "函数返回值应表达明确错误状态",
+                      "source":  "Huawei-C",
+                      "sourceRuleId":  "",
+                      "language":  [
+                                       "c"
+                                   ],
+                      "severity":  "Warning",
+                      "detection":  "manual",
+                      "defaultEnabled":  false,
+                      "allowDisable":  true,
+                      "disableRisk":  "关闭该规则后可能漏检相关代码质量或安全问题。",
+                      "description":  "函数返回值应表达明确错误状态",
+                      "suggestion":  "请参考规则说明修改代码。"
+                  },
+                  {
+                      "id":  "Quectel-C-013",
+                      "title":  "禁止忽略关键库函数返回值",
+                      "source":  "Huawei-C",
+                      "sourceRuleId":  "",
+                      "language":  [
+                                       "c"
+                                   ],
+                      "severity":  "Warning",
+                      "detection":  "builtin",
+                      "defaultEnabled":  true,
+                      "allowDisable":  true,
+                      "disableRisk":  "关闭该规则后可能漏检相关代码质量或安全问题。",
+                      "description":  "禁止忽略关键库函数返回值",
+                      "suggestion":  "请参考规则说明修改代码。"
+                  },
+                  {
+                      "id":  "Quectel-C-014",
+                      "title":  "switch 语句应包含 default 分支",
+                      "source":  "Huawei-C",
+                      "sourceRuleId":  "",
+                      "language":  [
+                                       "c"
+                                   ],
+                      "severity":  "Warning",
+                      "detection":  "builtin",
+                      "defaultEnabled":  true,
+                      "allowDisable":  true,
+                      "disableRisk":  "关闭该规则后可能漏检相关代码质量或安全问题。",
+                      "description":  "switch 语句应包含 default 分支",
+                      "suggestion":  "请参考规则说明修改代码。"
+                  },
+                  {
+                      "id":  "Quectel-C-015",
+                      "title":  "case 分支需要明确 break 或注释说明贯穿",
+                      "source":  "Huawei-C",
+                      "sourceRuleId":  "",
+                      "language":  [
+                                       "c"
+                                   ],
+                      "severity":  "Warning",
+                      "detection":  "builtin",
+                      "defaultEnabled":  true,
+                      "allowDisable":  true,
+                      "disableRisk":  "关闭该规则后可能漏检相关代码质量或安全问题。",
+                      "description":  "case 分支需要明确 break 或注释说明贯穿",
+                      "suggestion":  "请参考规则说明修改代码。"
+                  },
+                  {
+                      "id":  "Quectel-C-016",
+                      "title":  "宏定义应使用全大写和下划线命名",
+                      "source":  "Huawei-C",
+                      "sourceRuleId":  "",
+                      "language":  [
+                                       "c"
+                                   ],
+                      "severity":  "Suggestion",
+                      "detection":  "builtin",
+                      "defaultEnabled":  true,
+                      "allowDisable":  true,
+                      "disableRisk":  "关闭该规则后可能漏检相关代码质量或安全问题。",
+                      "description":  "宏定义应使用全大写和下划线命名",
+                      "suggestion":  "请参考规则说明修改代码。"
+                  },
+                  {
+                      "id":  "Quectel-C-017",
+                      "title":  "宏参数和宏整体表达式应使用括号保护",
+                      "source":  "Huawei-C",
+                      "sourceRuleId":  "",
+                      "language":  [
+                                       "c"
+                                   ],
+                      "severity":  "Warning",
+                      "detection":  "builtin",
+                      "defaultEnabled":  true,
+                      "allowDisable":  true,
+                      "disableRisk":  "关闭该规则后可能漏检相关代码质量或安全问题。",
+                      "description":  "宏参数和宏整体表达式应使用括号保护",
+                      "suggestion":  "请参考规则说明修改代码。"
+                  },
+                  {
+                      "id":  "Quectel-C-018",
+                      "title":  "禁止在头文件中定义可导致重复定义的全局对象",
+                      "source":  "Huawei-C",
+                      "sourceRuleId":  "",
+                      "language":  [
+                                       "c"
+                                   ],
+                      "severity":  "Warning",
+                      "detection":  "builtin",
+                      "defaultEnabled":  true,
+                      "allowDisable":  true,
+                      "disableRisk":  "关闭该规则后可能漏检相关代码质量或安全问题。",
+                      "description":  "禁止在头文件中定义可导致重复定义的全局对象",
+                      "suggestion":  "请参考规则说明修改代码。"
+                  },
+                  {
+                      "id":  "Quectel-C-019",
+                      "title":  "函数参数数量不宜过多",
+                      "source":  "Huawei-C",
+                      "sourceRuleId":  "",
+                      "language":  [
+                                       "c"
+                                   ],
+                      "severity":  "Suggestion",
+                      "detection":  "builtin",
+                      "defaultEnabled":  true,
+                      "allowDisable":  true,
+                      "disableRisk":  "关闭该规则后可能漏检相关代码质量或安全问题。",
+                      "description":  "函数参数数量不宜过多",
+                      "suggestion":  "请参考规则说明修改代码。"
+                  },
+                  {
+                      "id":  "Quectel-C-020",
+                      "title":  "函数嵌套层级不宜过深",
+                      "source":  "Huawei-C",
+                      "sourceRuleId":  "",
+                      "language":  [
+                                       "c"
+                                   ],
+                      "severity":  "Warning",
+                      "detection":  "builtin",
+                      "defaultEnabled":  true,
+                      "allowDisable":  true,
+                      "disableRisk":  "关闭该规则后可能漏检相关代码质量或安全问题。",
+                      "description":  "函数嵌套层级不宜过深",
+                      "suggestion":  "请参考规则说明修改代码。"
+                  },
+                  {
+                      "id":  "Quectel-C-021",
+                      "title":  "函数圈复杂度不得超过 10",
+                      "source":  "Huawei-C",
+                      "sourceRuleId":  "",
+                      "language":  [
+                                       "c"
+                                   ],
+                      "severity":  "Warning",
+                      "detection":  "lizard",
+                      "defaultEnabled":  true,
+                      "allowDisable":  true,
+                      "disableRisk":  "关闭该规则后可能漏检相关代码质量或安全问题。",
+                      "description":  "函数圈复杂度不得超过 10",
+                      "suggestion":  "请参考规则说明修改代码。"
+                  },
+                  {
+                      "id":  "Quectel-C-022",
+                      "title":  "函数体代码行数不得超过 100 行",
+                      "source":  "Huawei-C",
+                      "sourceRuleId":  "",
+                      "language":  [
+                                       "c"
+                                   ],
+                      "severity":  "Warning",
+                      "detection":  "lizard",
+                      "defaultEnabled":  true,
+                      "allowDisable":  true,
+                      "disableRisk":  "关闭该规则后可能漏检相关代码质量或安全问题。",
+                      "description":  "函数体代码行数不得超过 100 行",
+                      "suggestion":  "请参考规则说明修改代码。"
+                  }
+              ]
+}

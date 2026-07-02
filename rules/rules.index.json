@@ -1,0 +1,13 @@
+{
+  "schemaVersion": "1.0.0",
+  "ruleSetId": "CodeCheck-Quectel-C-Cpp",
+  "version": "1.0.0",
+  "files": [
+    "rules/quectel-c-rules.json",
+    "rules/quectel-cpp-rules.json",
+    "rules/cert-c-rules.json",
+    "rules/cert-cpp-rules.json"
+  ],
+  "profiles": "rules/rule-profiles.json",
+  "mapping": "rules/rule-mapping.json"
+}

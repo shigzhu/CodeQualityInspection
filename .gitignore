@@ -1,0 +1,27 @@
+# Visual Studio
+.vs/
+*.user
+*.suo
+
+# .NET build outputs
+**/bin/
+**/obj/
+TestResults/
+coverage/
+
+# Local worktrees
+.worktrees/
+worktrees/
+
+# CodeCheck generated runtime outputs at repository root
+/baseline/
+/release/
+/reports/
+/temp/
+/logs/
+/suppressions/
+/src-decrypted/
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
