@@ -18,5 +18,10 @@ public sealed class RuleLoaderTests
         Assert.Equal(ruleSet.Rules.Count, ruleSet.Rules.Select(rule => rule.Id).Distinct(StringComparer.OrdinalIgnoreCase).Count());
         Assert.Contains(ruleSet.Rules, rule => rule.Id == "Quectel-C-021" && rule.Detection == "lizard");
         Assert.Contains(ruleSet.Rules, rule => rule.Id == "Quectel-CPP-038" && rule.Detection == "lizard");
+        Assert.Contains(ruleSet.Mappings, mapping =>
+            mapping.Engine == "clang-tidy" &&
+            mapping.EngineRuleId == "cppcoreguidelines-virtual-class-destructor" &&
+            mapping.Language == "cpp" &&
+            mapping.RuleId == "Quectel-CPP-005");
     }
 }

@@ -50,6 +50,7 @@ public sealed class BuiltinRuleRunner : IAnalysisEngine
                     {
                         IssueId = $"ISSUE-{issueIndex:D6}",
                         RuleId = rule.RuleId,
+                        EngineRuleId = rule.RuleId,
                         Severity = rule.Severity,
                         Language = file.Language,
                         Engine = Name,
@@ -96,6 +97,7 @@ public sealed class BuiltinRuleRunner : IAnalysisEngine
         {
             IssueId = $"ISSUE-{issueIndex:D6}",
             RuleId = ruleId,
+            EngineRuleId = ruleId,
             Severity = severity,
             Language = file.Language,
             Engine = "CodeCheckBuiltin",

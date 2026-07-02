@@ -1,13 +1,14 @@
 using CodeCheck.Core.Engines;
 using CodeCheck.Core.Build;
 using CodeCheck.Core.Inputs;
+using CodeCheck.Core.Rules;
 
 namespace CodeCheck.Tests.Engines;
 
 public sealed class ClangTidyRunnerTests
 {
     [Fact]
-    public void ParseIssues_CreatesIssuesFromClangTidyDiagnostics()
+    public async Task ParseIssues_CreatesIssuesFromClangTidyDiagnostics()
     {
         var file = new ScanInputFile
         {
@@ -17,13 +18,20 @@ public sealed class ClangTidyRunnerTests
         };
         var output = $"{file.FullPath}:15:5: warning: destructor of 'Base' is public and non-virtual [cppcoreguidelines-virtual-class-destructor]";
 
-        var issues = ClangTidyRunner.ParseIssues(output, [file]);
+        var issues = ClangTidyRunner.ParseIssues(output, [file], await CreateMappingResolverAsync());
 
         var issue = Assert.Single(issues);
         Assert.Equal("Quectel-CPP-005", issue.RuleId);
+        Assert.Equal("cppcoreguidelines-virtual-class-destructor", issue.EngineRuleId);
         Assert.Equal("Warning", issue.Severity);
         Assert.Equal(file.RelativePath, issue.File);
         Assert.Equal(15, issue.Line);
+    }
+
+    private static async Task<RuleMappingResolver> CreateMappingResolverAsync()
+    {
+        var ruleSet = await new RuleLoader().LoadAsync(Path.Combine(TestRepository.Root, "rules", "rules.index.json"), CancellationToken.None);
+        return new RuleMappingResolver(ruleSet.Mappings);
     }
 
     [Fact]

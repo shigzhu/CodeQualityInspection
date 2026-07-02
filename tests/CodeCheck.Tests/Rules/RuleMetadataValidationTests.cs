@@ -72,6 +72,27 @@ public sealed class RuleMetadataValidationTests
         }
     }
 
+    [Fact]
+    public void RuleMappingFile_ReferencesKnownRules()
+    {
+        var ruleIds = LoadRules()
+            .Select(rule => rule.GetProperty("id").GetString())
+            .Where(id => !string.IsNullOrWhiteSpace(id))
+            .ToHashSet(StringComparer.OrdinalIgnoreCase);
+        using var mappingDocument = JsonDocument.Parse(File.ReadAllText(Path.Combine(TestRepository.Root, "rules", "rule-mapping.json")));
+
+        foreach (var mapping in mappingDocument.RootElement.GetProperty("mappings").EnumerateArray())
+        {
+            var engine = mapping.GetProperty("engine").GetString();
+            var ruleId = mapping.GetProperty("ruleId").GetString();
+            var engineRuleId = mapping.GetProperty("engineRuleId").GetString();
+
+            Assert.False(string.IsNullOrWhiteSpace(engine), $"Mapping for {ruleId} missing engine.");
+            Assert.False(string.IsNullOrWhiteSpace(engineRuleId), $"Mapping for {ruleId} missing engineRuleId.");
+            Assert.True(ruleId is not null && ruleIds.Contains(ruleId), $"Mapping points to unknown rule '{ruleId}'.");
+        }
+    }
+
     private static List<JsonElement> LoadRules()
     {
         var rules = new List<JsonElement>();

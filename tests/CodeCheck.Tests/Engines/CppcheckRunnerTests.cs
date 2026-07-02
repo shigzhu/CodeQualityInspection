@@ -1,13 +1,14 @@
 using CodeCheck.Core.Engines;
 using CodeCheck.Core.Build;
 using CodeCheck.Core.Inputs;
+using CodeCheck.Core.Rules;
 
 namespace CodeCheck.Tests.Engines;
 
 public sealed class CppcheckRunnerTests
 {
     [Fact]
-    public void ParseIssues_CreatesIssuesFromCppcheckXml()
+    public async Task ParseIssues_CreatesIssuesFromCppcheckXml()
     {
         var file = new ScanInputFile
         {
@@ -27,13 +28,20 @@ public sealed class CppcheckRunnerTests
                   </results>
                   """;
 
-        var issues = CppcheckRunner.ParseIssues(xml, [file]);
+        var issues = CppcheckRunner.ParseIssues(xml, [file], await CreateMappingResolverAsync());
 
         var issue = Assert.Single(issues);
         Assert.Equal("Quectel-C-008", issue.RuleId);
+        Assert.Equal("memleak", issue.EngineRuleId);
         Assert.Equal("Critical", issue.Severity);
         Assert.Equal(file.RelativePath, issue.File);
         Assert.Equal(12, issue.Line);
+    }
+
+    private static async Task<RuleMappingResolver> CreateMappingResolverAsync()
+    {
+        var ruleSet = await new RuleLoader().LoadAsync(Path.Combine(TestRepository.Root, "rules", "rules.index.json"), CancellationToken.None);
+        return new RuleMappingResolver(ruleSet.Mappings);
     }
 
     [Fact]

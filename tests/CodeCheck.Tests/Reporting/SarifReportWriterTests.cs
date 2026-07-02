@@ -21,6 +21,7 @@ public sealed class SarifReportWriterTests
                     Fingerprint = "sha256-stable-test",
                     PrimaryFingerprint = "sha256-primary-test",
                     RuleId = "Quectel-CPP-001",
+                    EngineRuleId = "cppcoreguidelines-avoid-non-const-global-variables",
                     Severity = "Warning",
                     Language = "cpp",
                     Engine = "CodeCheckBuiltin",
@@ -52,6 +53,7 @@ public sealed class SarifReportWriterTests
             Assert.Equal("warning", result.GetProperty("level").GetString());
             Assert.Equal("sha256-stable-test", result.GetProperty("fingerprints").GetProperty("stable").GetString());
             Assert.Equal("Existing", result.GetProperty("properties").GetProperty("baselineState").GetString());
+            Assert.Equal("cppcoreguidelines-avoid-non-const-global-variables", result.GetProperty("properties").GetProperty("engineRuleId").GetString());
             Assert.False(result.GetProperty("properties").GetProperty("isSuppressed").GetBoolean());
         }
         finally

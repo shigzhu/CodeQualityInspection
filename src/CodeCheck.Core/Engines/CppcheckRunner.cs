@@ -5,6 +5,7 @@ using CodeCheck.Core.Inputs;
 using CodeCheck.Core.Issues;
 using CodeCheck.Core.Reports;
 using CodeCheck.Core.Runtime;
+using CodeCheck.Core.Rules;
 
 namespace CodeCheck.Core.Engines;
 
@@ -60,6 +61,11 @@ public sealed class CppcheckRunner : IAnalysisEngine
 
     public static List<Issue> ParseIssues(string xml, IReadOnlyList<ScanInputFile> files)
     {
+        return ParseIssues(xml, files, DefaultRuleMappingResolver.Value);
+    }
+
+    public static List<Issue> ParseIssues(string xml, IReadOnlyList<ScanInputFile> files, RuleMappingResolver mappingResolver)
+    {
         var issues = new List<Issue>();
         if (string.IsNullOrWhiteSpace(xml) || !xml.Contains("<results", StringComparison.OrdinalIgnoreCase))
         {
@@ -77,13 +83,16 @@ public sealed class CppcheckRunner : IAnalysisEngine
             var severity = MapSeverity(error.Attribute("severity")?.Value ?? string.Empty);
             var engineRuleId = error.Attribute("id")?.Value ?? string.Empty;
             var message = error.Attribute("msg")?.Value ?? error.Attribute("verbose")?.Value ?? string.Empty;
+            var language = file?.Language ?? string.Empty;
+            var mapping = mappingResolver.Resolve("cppcheck", engineRuleId, language);
 
             issues.Add(new Issue
             {
                 IssueId = $"CPPCHECK-{issueIndex:D6}",
-                RuleId = MapRuleId(engineRuleId, file?.Language),
+                RuleId = mapping.RuleId,
+                EngineRuleId = mapping.EngineRuleId,
                 Severity = severity,
-                Language = file?.Language ?? string.Empty,
+                Language = language,
                 Engine = "cppcheck",
                 Message = message,
                 File = file?.RelativePath ?? filePath.Replace('/', Path.DirectorySeparatorChar),
@@ -127,23 +136,5 @@ public sealed class CppcheckRunner : IAnalysisEngine
         };
     }
 
-    private static string MapRuleId(string engineRuleId, string? language)
-    {
-        if (engineRuleId.Contains("memleak", StringComparison.OrdinalIgnoreCase))
-        {
-            return language == "c" ? "Quectel-C-008" : "Quectel-CPP-011";
-        }
-
-        if (engineRuleId.Contains("uninit", StringComparison.OrdinalIgnoreCase))
-        {
-            return language == "c" ? "Quectel-C-006" : "Quectel-CPP-015";
-        }
-
-        if (engineRuleId.Contains("array", StringComparison.OrdinalIgnoreCase) || engineRuleId.Contains("bounds", StringComparison.OrdinalIgnoreCase))
-        {
-            return language == "c" ? "Quectel-C-004" : "Quectel-CPP-015";
-        }
-
-        return language == "c" ? "Quectel-CERT-C-003" : "Quectel-CERT-CPP-020";
-    }
+    private static readonly Lazy<RuleMappingResolver> DefaultRuleMappingResolver = new(() => RuleMappingResolverFactory.CreateDefault());
 }

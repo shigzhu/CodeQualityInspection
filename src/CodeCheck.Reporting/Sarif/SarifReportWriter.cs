@@ -69,6 +69,7 @@ public sealed class SarifReportWriter
                         properties = new
                         {
                             issueId = issue.IssueId,
+                            engineRuleId = issue.EngineRuleId,
                             severity = issue.Severity,
                             engine = issue.Engine,
                             language = issue.Language,

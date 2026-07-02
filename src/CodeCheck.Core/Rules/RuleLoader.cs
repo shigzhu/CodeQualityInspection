@@ -42,6 +42,13 @@ public sealed class RuleLoader : IRuleLoader
             ruleSet.Profiles.AddRange(profileFile.Profiles);
         }
 
+        if (!string.IsNullOrWhiteSpace(index.Mapping))
+        {
+            var mappingPath = ResolveRulePath(indexRoot, index.Mapping);
+            var mappingFile = await ReadJsonAsync<RuleMappingFile>(mappingPath, cancellationToken);
+            ruleSet.Mappings.AddRange(mappingFile.Mappings);
+        }
+
         return ruleSet;
     }
 
@@ -49,7 +56,7 @@ public sealed class RuleLoader : IRuleLoader
     {
         await using var stream = File.OpenRead(path);
         return await JsonSerializer.DeserializeAsync<T>(stream, Options, cancellationToken)
-            ?? throw new InvalidOperationException($"文件内容为空或格式不正确：{path}");
+            ?? throw new InvalidOperationException($"鏂囦欢鍐呭涓虹┖鎴栨牸寮忎笉姝ｇ‘锛歿path}");
     }
 
     private static string ResolveRulePath(string indexRoot, string path)

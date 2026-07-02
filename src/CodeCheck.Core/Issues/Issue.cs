@@ -6,6 +6,7 @@ public sealed class Issue
     public string Fingerprint { get; set; } = string.Empty;
     public string PrimaryFingerprint { get; set; } = string.Empty;
     public string RuleId { get; set; } = string.Empty;
+    public string EngineRuleId { get; set; } = string.Empty;
     public string Severity { get; set; } = string.Empty;
     public string Language { get; set; } = string.Empty;
     public string Engine { get; set; } = string.Empty;

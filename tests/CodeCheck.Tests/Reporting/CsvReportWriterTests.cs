@@ -19,6 +19,7 @@ public sealed class CsvReportWriterTests
                     IssueId = "ISSUE-000001",
                     Severity = "Warning",
                     RuleId = "Quectel-CPP-001",
+                    EngineRuleId = "Quectel-CPP-001",
                     Engine = "CodeCheckBuiltin",
                     Language = "cpp",
                     File = "include/bad_header.hpp",
@@ -36,8 +37,9 @@ public sealed class CsvReportWriterTests
             await new CsvReportWriter().WriteAsync(report, outputPath, CancellationToken.None);
 
             var csv = await File.ReadAllTextAsync(outputPath);
-            Assert.Contains("IssueId,Severity,RuleId,Engine,Language,File,Line,BaselineState,SuppressionState,IsSuppressed,Fingerprint,Message", csv);
+            Assert.Contains("IssueId,Severity,RuleId,EngineRuleId,Engine,Language,File,Line,BaselineState,SuppressionState,IsSuppressed,Fingerprint,Message", csv);
             Assert.Contains("ISSUE-000001", csv);
+            Assert.Contains("Quectel-CPP-001", csv);
             Assert.Contains("sha256-stable-test", csv);
             Assert.Contains("\"Header should not use \"\"using namespace\"\", please fix.\"", csv);
         }

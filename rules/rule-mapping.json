@@ -1,4 +1,180 @@
 {
   "schemaVersion": "1.0.0",
-  "mappings": []
+  "mappings": [
+    {
+      "engine": "clang-tidy",
+      "engineRuleId": "cppcoreguidelines-virtual-class-destructor",
+      "match": "exact",
+      "language": "cpp",
+      "ruleId": "Quectel-CPP-005"
+    },
+    {
+      "engine": "clang-tidy",
+      "engineRuleId": "use-after",
+      "match": "contains",
+      "language": "c",
+      "ruleId": "Quectel-C-010"
+    },
+    {
+      "engine": "clang-tidy",
+      "engineRuleId": "use-after",
+      "match": "contains",
+      "language": "cpp",
+      "ruleId": "Quectel-CPP-012"
+    },
+    {
+      "engine": "clang-tidy",
+      "engineRuleId": "uninit",
+      "match": "contains",
+      "language": "c",
+      "ruleId": "Quectel-C-006"
+    },
+    {
+      "engine": "clang-tidy",
+      "engineRuleId": "uninit",
+      "match": "contains",
+      "language": "cpp",
+      "ruleId": "Quectel-CPP-015"
+    },
+    {
+      "engine": "clang-tidy",
+      "engineRuleId": "OOP52",
+      "match": "contains",
+      "language": "cpp",
+      "ruleId": "Quectel-CPP-005"
+    },
+    {
+      "engine": "clang-tidy",
+      "engineRuleId": "virtual",
+      "match": "contains",
+      "language": "cpp",
+      "ruleId": "Quectel-CPP-005"
+    },
+    {
+      "engine": "clang-tidy",
+      "engineRuleId": "return-stack",
+      "match": "contains",
+      "language": "c",
+      "ruleId": "Quectel-CERT-C-020"
+    },
+    {
+      "engine": "clang-tidy",
+      "engineRuleId": "return-stack",
+      "match": "contains",
+      "language": "cpp",
+      "ruleId": "Quectel-CPP-035"
+    },
+    {
+      "engine": "clang-tidy",
+      "engineRuleId": "*",
+      "language": "c",
+      "ruleId": "Quectel-CERT-C-003",
+      "fallback": true
+    },
+    {
+      "engine": "clang-tidy",
+      "engineRuleId": "*",
+      "language": "cpp",
+      "ruleId": "Quectel-CERT-CPP-020",
+      "fallback": true
+    },
+    {
+      "engine": "cppcheck",
+      "engineRuleId": "memleak",
+      "match": "contains",
+      "language": "c",
+      "ruleId": "Quectel-C-008"
+    },
+    {
+      "engine": "cppcheck",
+      "engineRuleId": "memleak",
+      "match": "contains",
+      "language": "cpp",
+      "ruleId": "Quectel-CPP-011"
+    },
+    {
+      "engine": "cppcheck",
+      "engineRuleId": "uninit",
+      "match": "contains",
+      "language": "c",
+      "ruleId": "Quectel-C-006"
+    },
+    {
+      "engine": "cppcheck",
+      "engineRuleId": "uninit",
+      "match": "contains",
+      "language": "cpp",
+      "ruleId": "Quectel-CPP-015"
+    },
+    {
+      "engine": "cppcheck",
+      "engineRuleId": "array",
+      "match": "contains",
+      "language": "c",
+      "ruleId": "Quectel-C-004"
+    },
+    {
+      "engine": "cppcheck",
+      "engineRuleId": "array",
+      "match": "contains",
+      "language": "cpp",
+      "ruleId": "Quectel-CPP-015"
+    },
+    {
+      "engine": "cppcheck",
+      "engineRuleId": "bounds",
+      "match": "contains",
+      "language": "c",
+      "ruleId": "Quectel-C-004"
+    },
+    {
+      "engine": "cppcheck",
+      "engineRuleId": "bounds",
+      "match": "contains",
+      "language": "cpp",
+      "ruleId": "Quectel-CPP-015"
+    },
+    {
+      "engine": "cppcheck",
+      "engineRuleId": "*",
+      "language": "c",
+      "ruleId": "Quectel-CERT-C-003",
+      "fallback": true
+    },
+    {
+      "engine": "cppcheck",
+      "engineRuleId": "*",
+      "language": "cpp",
+      "ruleId": "Quectel-CERT-CPP-020",
+      "fallback": true
+    },
+    {
+      "engine": "lizard",
+      "engineRuleId": "cyclomatic-complexity",
+      "match": "exact",
+      "language": "c",
+      "ruleId": "Quectel-C-021"
+    },
+    {
+      "engine": "lizard",
+      "engineRuleId": "cyclomatic-complexity",
+      "match": "exact",
+      "language": "cpp",
+      "ruleId": "Quectel-CPP-037"
+    },
+    {
+      "engine": "lizard",
+      "engineRuleId": "function-length",
+      "match": "exact",
+      "language": "c",
+      "ruleId": "Quectel-C-022"
+    },
+    {
+      "engine": "lizard",
+      "engineRuleId": "function-length",
+      "match": "exact",
+      "language": "cpp",
+      "ruleId": "Quectel-CPP-038"
+    }
+  ]
 }

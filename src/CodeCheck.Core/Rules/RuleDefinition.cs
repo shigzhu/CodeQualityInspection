@@ -101,4 +101,42 @@ public sealed class RuleSet
     public string Version { get; set; } = string.Empty;
     public List<RuleDefinition> Rules { get; set; } = [];
     public List<RuleProfile> Profiles { get; set; } = [];
+    public List<RuleMapping> Mappings { get; set; } = [];
+}
+
+public sealed class RuleMappingFile
+{
+    [JsonPropertyName("schemaVersion")]
+    public string SchemaVersion { get; set; } = "1.0.0";
+
+    [JsonPropertyName("mappings")]
+    public List<RuleMapping> Mappings { get; set; } = [];
+}
+
+public sealed class RuleMapping
+{
+    [JsonPropertyName("engine")]
+    public string Engine { get; set; } = string.Empty;
+
+    [JsonPropertyName("engineRuleId")]
+    public string EngineRuleId { get; set; } = string.Empty;
+
+    [JsonPropertyName("match")]
+    public string Match { get; set; } = "exact";
+
+    [JsonPropertyName("language")]
+    public string Language { get; set; } = string.Empty;
+
+    [JsonPropertyName("ruleId")]
+    public string RuleId { get; set; } = string.Empty;
+
+    [JsonPropertyName("fallback")]
+    public bool Fallback { get; set; }
+}
+
+public sealed class RuleMappingResult
+{
+    public string RuleId { get; set; } = string.Empty;
+    public string EngineRuleId { get; set; } = string.Empty;
+    public bool IsFallback { get; set; }
 }

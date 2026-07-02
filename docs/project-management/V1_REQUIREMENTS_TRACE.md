@@ -70,7 +70,7 @@ Source of truth:
 | V1-RULE-002 | Default profile can load all enabled rules. | Partial | `rule-profiles.json` lists 95 enabled; 5 manual/default disabled. | Confirm intended enabled count and report manual rules clearly. |
 | V1-RULE-003 | Every rule declares detection method. | Done | Detection methods present across rule files. | Add validation for allowed values. |
 | V1-RULE-004 | Detection methods limited to `builtin`, `clang-tidy`, `cppcheck`, `lizard`, `manual`. | Needs Verification | Current values appear in this set. | Add automated rule metadata test. |
-| V1-RULE-005 | Rule mapping file drives engine-to-rule normalization. | Not Started | `rule-mapping.json` is empty and mappings are hard-coded. | Implement mapping model or explicitly document hard-coded v1 behavior. |
+| V1-RULE-005 | Rule mapping file drives engine-to-rule normalization. | Done | `rule-mapping.json` is now loaded into `RuleSet.Mappings`; clang-tidy/cppcheck/lizard parsing resolves canonical CodeCheck IDs through `RuleMappingResolver`, while reports preserve analyzer-native `engineRuleId`. | Expand mapping coverage as bundled tool versions are fixed. |
 | V1-RULE-006 | Rule close/disable requires reason. | Not Started | No CLI/GUI rule-disable workflow found. | Add disabled rules config and GUI validation. |
 | V1-RULE-007 | High-risk rule disable requires risk confirmation. | Not Started | No workflow found. | Add severity-based confirmation. |
 

@@ -5,6 +5,7 @@ using CodeCheck.Core.Inputs;
 using CodeCheck.Core.Issues;
 using CodeCheck.Core.Reports;
 using CodeCheck.Core.Runtime;
+using CodeCheck.Core.Rules;
 
 namespace CodeCheck.Core.Engines;
 
@@ -67,6 +68,11 @@ public sealed class ClangTidyRunner : IAnalysisEngine
 
     public static List<Issue> ParseIssues(string output, IReadOnlyList<ScanInputFile> files)
     {
+        return ParseIssues(output, files, DefaultRuleMappingResolver.Value);
+    }
+
+    public static List<Issue> ParseIssues(string output, IReadOnlyList<ScanInputFile> files, RuleMappingResolver mappingResolver)
+    {
         var issues = new List<Issue>();
         if (string.IsNullOrWhiteSpace(output))
         {
@@ -86,11 +92,13 @@ public sealed class ClangTidyRunner : IAnalysisEngine
             var file = ResolveFile(filePath, files);
             var engineRuleId = match.Groups["check"].Value;
             var language = file?.Language == "c" ? "c" : "cpp";
+            var mapping = mappingResolver.Resolve("clang-tidy", engineRuleId, language);
 
             issues.Add(new Issue
             {
                 IssueId = $"CLANGTIDY-{issueIndex:D6}",
-                RuleId = MapRuleId(engineRuleId, language),
+                RuleId = mapping.RuleId,
+                EngineRuleId = mapping.EngineRuleId,
                 Severity = match.Groups["level"].Value == "error" ? "Critical" : "Warning",
                 Language = language,
                 Engine = "clang-tidy",
@@ -125,28 +133,5 @@ public sealed class ClangTidyRunner : IAnalysisEngine
         return files.FirstOrDefault(file => string.Equals(file.FullPath, path, StringComparison.OrdinalIgnoreCase) || path.EndsWith(file.RelativePath, StringComparison.OrdinalIgnoreCase));
     }
 
-    private static string MapRuleId(string engineRuleId, string language)
-    {
-        if (engineRuleId.Contains("use-after", StringComparison.OrdinalIgnoreCase))
-        {
-            return language == "c" ? "Quectel-C-010" : "Quectel-CPP-012";
-        }
-
-        if (engineRuleId.Contains("uninitialized", StringComparison.OrdinalIgnoreCase) || engineRuleId.Contains("uninit", StringComparison.OrdinalIgnoreCase))
-        {
-            return language == "c" ? "Quectel-C-006" : "Quectel-CPP-015";
-        }
-
-        if (engineRuleId.Contains("virtual", StringComparison.OrdinalIgnoreCase) || engineRuleId.Contains("OOP52", StringComparison.OrdinalIgnoreCase))
-        {
-            return "Quectel-CPP-005";
-        }
-
-        if (engineRuleId.Contains("return-stack", StringComparison.OrdinalIgnoreCase) || engineRuleId.Contains("return", StringComparison.OrdinalIgnoreCase) && engineRuleId.Contains("local", StringComparison.OrdinalIgnoreCase))
-        {
-            return language == "c" ? "Quectel-CERT-C-020" : "Quectel-CPP-035";
-        }
-
-        return language == "c" ? "Quectel-CERT-C-003" : "Quectel-CERT-CPP-020";
-    }
+    private static readonly Lazy<RuleMappingResolver> DefaultRuleMappingResolver = new(() => RuleMappingResolverFactory.CreateDefault());
 }
