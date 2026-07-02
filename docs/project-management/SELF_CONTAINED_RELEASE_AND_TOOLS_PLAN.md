@@ -160,3 +160,12 @@ Before bundling:
 ## Open Item
 
 Tool versions are not selected yet. After Visual Studio/.NET are installed, choose fixed versions and update this plan with exact filenames and checksums.
+
+## Execution Notes
+
+- Phase 3 script baseline applied on: 2026-07-03.
+- `scripts/build-release.ps1` now defaults to self-contained publish; `-FrameworkDependent` is the development opt-out.
+- Bundled tools are required by default. Use `-SkipTools` only for development skeletons before tools are staged.
+- `third_party_tools/third-party-versions.json` is the manifest source copied to `release/tools/third-party-versions.json`.
+- `scripts/check-release.ps1` now fails when required release files, tool executables, runtime folders, or the manifest are missing.
+- Tool versions and license files still need final selection/staging before the V1 release gate can pass without `-SkipTools`.

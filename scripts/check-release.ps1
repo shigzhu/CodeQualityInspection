@@ -1,15 +1,33 @@
 param(
-    [string]$ReleaseRoot = "release"
+    [string]$ReleaseRoot = "release",
+    [switch]$SkipExecution
 )
+
+$failed = $false
+
+function Test-RequiredPath([string]$Path) {
+    $fullPath = Join-Path $ReleaseRoot $Path
+    if (Test-Path -LiteralPath $fullPath) {
+        Write-Host "[OK] $Path"
+    }
+    else {
+        Write-Host "[ERROR] $Path"
+        $script:failed = $true
+    }
+}
 
 $items = @(
     "CodeCheck.Cli.exe",
     "CodeCheck.Desktop.exe",
     "configs/default-codecheck.json",
     "rules/rules.index.json",
-    "report-templates",
     "docs",
     "samples",
+    "tools/third-party-versions.json",
+    "tools/llvm/bin/clang-tidy.exe",
+    "tools/cppcheck/cppcheck.exe",
+    "tools/lizard/lizard.exe",
+    "licenses",
     "reports",
     "baseline",
     "suppressions",
@@ -18,10 +36,32 @@ $items = @(
 )
 
 foreach ($item in $items) {
-    $path = Join-Path $ReleaseRoot $item
-    if (Test-Path $path) {
-        Write-Host "[OK] $item"
-    } else {
-        Write-Host "[ERROR] $item"
+    Test-RequiredPath $item
+}
+
+if (-not $SkipExecution) {
+    $cliPath = Join-Path $ReleaseRoot "CodeCheck.Cli.exe"
+    $configPath = Join-Path $ReleaseRoot "configs/default-codecheck.json"
+
+    if (Test-Path -LiteralPath $cliPath) {
+        & $cliPath --version
+        if ($LASTEXITCODE -ne 0) {
+            Write-Host "[ERROR] CodeCheck.Cli.exe --version failed."
+            $failed = $true
+        }
+
+        if (Test-Path -LiteralPath $configPath) {
+            & $cliPath validate --config $configPath
+            if ($LASTEXITCODE -ne 0) {
+                Write-Host "[ERROR] CodeCheck.Cli.exe validate failed."
+                $failed = $true
+            }
+        }
     }
 }
+
+if ($failed) {
+    exit 1
+}
+
+Write-Host "[OK] Release checks passed."

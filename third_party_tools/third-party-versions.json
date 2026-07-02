@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "1.0.0",
+  "tools": {
+    "llvm": {
+      "version": "pending-v1-selection",
+      "requiredFiles": [
+        "bin/clang-tidy.exe"
+      ],
+      "sourceUrl": ""
+    },
+    "cppcheck": {
+      "version": "pending-v1-selection",
+      "requiredFiles": [
+        "cppcheck.exe"
+      ],
+      "sourceUrl": ""
+    },
+    "lizard": {
+      "version": "pending-v1-selection",
+      "requiredFiles": [
+        "lizard.exe"
+      ],
+      "sourceUrl": ""
+    }
+  }
+}
